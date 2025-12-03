@@ -36,7 +36,7 @@ const AboutSection = () => {
           <span className="inline-block px-4 py-1 mb-4 text-xs uppercase tracking-[0.3em] text-primary border border-primary/30 font-rajdhani">
             About the Game
           </span>
-          <h2 className="font-orbitron text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="font-sixtyfour text-2xl md:text-4xl font-bold mb-6">
             <span className="neon-text-cyan">Hard Sci-Fi</span>{" "}
             <span className="text-foreground">Meets</span>{" "}
             <span className="neon-text-orange">Retro Gaming</span>
@@ -61,7 +61,7 @@ const AboutSection = () => {
               </div>
               
               {/* Content */}
-              <h3 className="font-orbitron text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
+              <h3 className="font-sixtyfour text-sm font-semibold mb-2 text-foreground group-hover:text-primary transition-colors">
                 {feature.title}
               </h3>
               <p className="text-sm text-muted-foreground font-rajdhani leading-relaxed">
@@ -84,7 +84,7 @@ const AboutSection = () => {
               className="w-full h-auto object-contain"
             />
             <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-background via-background/80 to-transparent">
-              <h3 className="font-orbitron text-xl font-bold text-primary mb-2">La Nave Odisea</h3>
+              <h3 className="font-sixtyfour text-lg font-bold text-primary mb-2">La Nave Odisea</h3>
               <p className="text-sm text-muted-foreground font-rajdhani">
                 8 kilometers of rotating modules, cryogenic chambers, bio-farms, and industrial corridors. 
                 Home to 50,000 sleeping colonists bound for Titan.

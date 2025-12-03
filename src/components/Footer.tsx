@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex flex-col items-center md:items-start gap-2">
-            <span className="font-orbitron text-2xl font-bold neon-text-cyan">ODISEA</span>
+            <span className="font-sixtyfour text-xl font-bold neon-text-cyan">ODISEA</span>
             <span className="text-sm text-muted-foreground font-rajdhani">El Arca Silenciosa</span>
           </div>
 

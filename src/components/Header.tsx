@@ -18,7 +18,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-            <span className="font-orbitron text-xl font-bold neon-text-cyan">
+            <span className="font-sixtyfour text-lg font-bold neon-text-cyan">
               ODISEA
             </span>
           </a>

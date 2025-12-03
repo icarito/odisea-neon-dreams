@@ -39,7 +39,7 @@ const GallerySection = () => {
           <span className="inline-block px-4 py-1 mb-4 text-xs uppercase tracking-[0.3em] text-primary border border-primary/30 font-rajdhani">
             Concept Art
           </span>
-          <h2 className="font-orbitron text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="font-sixtyfour text-2xl md:text-4xl font-bold mb-6">
             <span className="neon-text-cyan">Visual</span>{" "}
             <span className="text-foreground">Development</span>
           </h2>
@@ -63,7 +63,7 @@ const GallerySection = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 inset-x-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                <h3 className="font-orbitron text-sm font-bold text-primary">{image.title}</h3>
+                <h3 className="font-sixtyfour text-xs font-bold text-primary">{image.title}</h3>
                 <p className="text-xs text-muted-foreground font-rajdhani">{image.description}</p>
               </div>
               {/* Corner accents */}
@@ -97,7 +97,7 @@ const GallerySection = () => {
               />
             </div>
             <div className="mt-4 text-center">
-              <h3 className="font-orbitron text-xl font-bold text-primary">{selectedImage.title}</h3>
+              <h3 className="font-sixtyfour text-lg font-bold text-primary">{selectedImage.title}</h3>
               <p className="text-muted-foreground font-rajdhani">{selectedImage.description}</p>
             </div>
           </div>
