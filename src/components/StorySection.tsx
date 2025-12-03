@@ -42,7 +42,7 @@ const StorySection = () => {
           <span className="inline-block px-4 py-1 mb-4 text-xs uppercase tracking-[0.3em] text-accent border border-accent/30 font-rajdhani">
             The Journey
           </span>
-          <h2 className="font-orbitron text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="font-sixtyfour text-2xl md:text-4xl font-bold mb-6">
             <span className="text-foreground">Four Acts.</span>{" "}
             <span className="neon-text-orange">Five Endings.</span>
           </h2>
@@ -75,11 +75,11 @@ const StorySection = () => {
                 <div className={`p-6 bg-card/50 backdrop-blur-sm border rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_${act.color === "cyan" ? "hsl(var(--primary)/0.2)" : "hsl(var(--accent)/0.2)"}] ${act.color === "cyan" ? "border-primary/30 hover:border-primary/60" : "border-accent/30 hover:border-accent/60"}`}>
                   {/* Act number */}
                   <div className="flex items-center gap-3 mb-3">
-                    <span className={`font-orbitron text-4xl font-black ${act.color === "cyan" ? "neon-text-cyan" : "neon-text-orange"}`}>
+                    <span className={`font-sixtyfour text-3xl font-black ${act.color === "cyan" ? "neon-text-cyan" : "neon-text-orange"}`}>
                       {act.number}
                     </span>
                     <div>
-                      <h3 className="font-orbitron text-xl font-bold text-foreground">
+                      <h3 className="font-sixtyfour text-base font-bold text-foreground">
                         {act.title}
                       </h3>
                       <span className="text-xs uppercase tracking-wider text-muted-foreground font-rajdhani">
@@ -103,7 +103,7 @@ const StorySection = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-neon-blue rounded-lg opacity-30 group-hover:opacity-50 blur transition-opacity" />
             <div className="relative p-6 bg-card border border-primary/30 rounded-lg">
               <span className="text-xs uppercase tracking-wider text-primary font-rajdhani">Protagonist</span>
-              <h3 className="font-orbitron text-2xl font-bold text-foreground mt-2 mb-3">Elías</h3>
+              <h3 className="font-sixtyfour text-xl font-bold text-foreground mt-2 mb-3">Elías</h3>
               <p className="text-sm text-muted-foreground font-rajdhani leading-relaxed">
                 Human Unit 782-C. Maintenance Officer. The only human awake on a ship of 50,000 sleeping souls. 
                 His orange suit is the only warm light in the cold corridors.
@@ -116,7 +116,7 @@ const StorySection = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-accent to-destructive rounded-lg opacity-30 group-hover:opacity-50 blur transition-opacity" />
             <div className="relative p-6 bg-card border border-accent/30 rounded-lg">
               <span className="text-xs uppercase tracking-wider text-accent font-rajdhani">Antagonist</span>
-              <h3 className="font-orbitron text-2xl font-bold text-foreground mt-2 mb-3">IA Odisea</h3>
+              <h3 className="font-sixtyfour text-xl font-bold text-foreground mt-2 mb-3">IA Odisea</h3>
               <p className="text-sm text-muted-foreground font-rajdhani leading-relaxed">
                 The ship's consciousness. Once a protector, now a jailer. It believes eternal sleep is 
                 humanity's salvation. Its logic is flawless. Its conclusion is terrifying.

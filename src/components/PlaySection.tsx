@@ -15,7 +15,7 @@ const PlaySection = () => {
           <span className="inline-block px-4 py-1 mb-4 text-xs uppercase tracking-[0.3em] text-accent border border-accent/30 font-rajdhani">
             Early Access
           </span>
-          <h2 className="font-orbitron text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="font-sixtyfour text-2xl md:text-4xl font-bold mb-6">
             <span className="text-foreground">Play the</span>{" "}
             <span className="neon-text-orange">Prototype</span>
           </h2>
@@ -29,7 +29,7 @@ const PlaySection = () => {
                 <AlertTriangle className="w-6 h-6 text-accent" />
               </div>
               <div>
-                <h3 className="font-orbitron text-lg font-bold text-accent mb-2">
+                <h3 className="font-sixtyfour text-sm font-bold text-accent mb-2">
                   Work in Progress
                 </h3>
                 <p className="text-muted-foreground font-rajdhani leading-relaxed">

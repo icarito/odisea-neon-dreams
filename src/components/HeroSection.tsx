@@ -26,10 +26,10 @@ const HeroSection = () => {
             </div>
 
             <h1 className="animate-slide-up opacity-0" style={{ animationDelay: "200ms", animationFillMode: "forwards" }}>
-              <span className="block font-orbitron text-5xl md:text-7xl lg:text-8xl font-black mb-2 neon-text-orange flicker">
+              <span className="block font-sixtyfour text-4xl md:text-6xl lg:text-7xl font-black mb-2 neon-text-orange flicker">
                 ODISEA
               </span>
-              <span className="block font-orbitron text-xl md:text-2xl lg:text-3xl text-primary font-light tracking-[0.2em]">
+              <span className="block font-sixtyfour text-lg md:text-xl lg:text-2xl text-primary font-light tracking-[0.2em]">
                 EL ARCA SILENCIOSA
               </span>
             </h1>
