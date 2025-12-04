@@ -54,8 +54,18 @@ const PlaySection = () => {
                 <iframe
                   src="https://icarito.github.io/Odisea/HTML5/"
                   className="w-full h-full border-0"
+                  style={{ display: 'block', width: '100%', height: '100%' }}
                   title="Odisea Prototype"
+                  allow="pointer-lock; fullscreen"
                   allowFullScreen
+                  onMouseEnter={(e) => {
+                    // Focus iframe on hover to ensure pointer lock works
+                    (e.target as HTMLIFrameElement).focus();
+                  }}
+                  onClick={(e) => {
+                    // Ensure focus on click before Godot requests pointer lock
+                    (e.target as HTMLIFrameElement).focus();
+                  }}
                 />
               </div>
               
