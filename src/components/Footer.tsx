@@ -32,17 +32,17 @@ const Footer = () => {
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <ExternalLink className="w-5 h-5" />
-              <span className="text-sm font-rajdhani">Design Docs</span>
+              <span className="text-sm font-rajdhani">Documentación</span>
             </a>
           </div>
 
           {/* Copyright */}
           <div className="text-center md:text-right">
             <p className="text-sm text-muted-foreground font-rajdhani">
-              A retro-futuristic adventure
+              Una aventura retro-futurista
             </p>
             <p className="text-xs text-muted-foreground/60 font-rajdhani mt-1">
-              Made with 💙 by Elías
+              Hecho con 💙 por Sebastian Silva
             </p>
           </div>
         </div>

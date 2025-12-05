@@ -21,7 +21,7 @@ const HeroSection = () => {
           <div className="flex-1 text-center lg:text-left">
             <div className="animate-slide-up opacity-0" style={{ animationDelay: "100ms", animationFillMode: "forwards" }}>
               <span className="inline-block px-4 py-1 mb-6 text-xs uppercase tracking-[0.3em] text-accent border border-accent/50 font-rajdhani">
-                Retro-Futuristic 3D Platformer
+                Plataformas 3D Retro-Futurista
               </span>
             </div>
 
@@ -43,11 +43,11 @@ const HeroSection = () => {
               <Button variant="hero" size="xl" asChild>
                 <a href="#play" className="gap-3">
                   <Gamepad2 className="w-5 h-5" />
-                  Play Prototype
+                  Probar Alpha
                 </a>
               </Button>
               <Button variant="neonCyan" size="xl" asChild>
-                <a href="#about">Learn More</a>
+                <a href="#about">Conocer Más</a>
               </Button>
             </div>
           </div>
@@ -72,7 +72,7 @@ const HeroSection = () => {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
-            <span className="text-xs uppercase tracking-widest font-rajdhani">Scroll</span>
+            <span className="text-xs uppercase tracking-widest font-rajdhani">Explorar</span>
             <ChevronDown className="w-5 h-5" />
           </a>
         </div>

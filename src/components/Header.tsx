@@ -6,10 +6,11 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Features", href: "#features" },
-    { label: "Story", href: "#story" },
-    { label: "Gallery", href: "#gallery" },
+    { label: "Acerca", href: "#about" },
+    { label: "Historia", href: "#story" },
+    { label: "Galería", href: "#gallery" },
+    { label: "Devlog", href: "#devlog" },
+    { label: "Técnico", href: "#tech" },
   ];
 
   return (
@@ -35,7 +36,7 @@ const Header = () => {
               </a>
             ))}
             <Button variant="neonOrange" size="sm" asChild>
-              <a href="#play">Play Demo</a>
+              <a href="#play">Jugar Alpha</a>
             </Button>
           </nav>
 
@@ -63,7 +64,7 @@ const Header = () => {
                 </a>
               ))}
               <Button variant="neonOrange" size="sm" asChild>
-                <a href="#play">Play Demo</a>
+                <a href="#play">Jugar Alpha</a>
               </Button>
             </div>
           </nav>

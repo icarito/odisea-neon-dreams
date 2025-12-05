@@ -4,23 +4,23 @@ import { X } from "lucide-react";
 const images = [
   {
     src: "https://icarito.github.io/Odisea_Design_Docs/assets/odisea_master_portada.png",
-    title: "Main Concept",
-    description: "The Odisea colony ship in all its industrial glory",
+    title: "Concepto Principal",
+    description: "La nave colonial Odisea en toda su gloria industrial",
   },
   {
     src: "https://icarito.github.io/Odisea_Design_Docs/assets/nave_odisea_exterior.jpeg",
-    title: "Ship Exterior",
-    description: "8 kilometers of humanity's last hope",
+    title: "Exterior de la Nave",
+    description: "8 kilómetros de la última esperanza de la humanidad",
   },
   {
     src: "https://icarito.github.io/Odisea_Design_Docs/assets/nave_odisea_seccion.jpeg",
-    title: "Cross Section",
-    description: "Rotating modules, cryogenic chambers, and the central core",
+    title: "Sección Transversal",
+    description: "Módulos rotatorios, cámaras criogénicas y el núcleo central",
   },
   {
     src: "https://icarito.github.io/Odisea_Design_Docs/assets/nave_odisea_esquema.png",
-    title: "Technical Blueprint",
-    description: "The ship's structure and gravity zones",
+    title: "Plano Técnico",
+    description: "Estructura de la nave y zonas de gravedad",
   },
 ];
 
@@ -37,14 +37,14 @@ const GallerySection = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 mb-4 text-xs uppercase tracking-[0.3em] text-primary border border-primary/30 font-rajdhani">
-            Concept Art
+            Arte Conceptual
           </span>
           <h2 className="font-sixtyfour text-2xl md:text-4xl font-bold mb-6">
-            <span className="neon-text-cyan">Visual</span>{" "}
-            <span className="text-foreground">Development</span>
+            <span className="neon-text-cyan">Desarrollo</span>{" "}
+            <span className="text-foreground">Visual</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-rajdhani">
-            Low-poly aesthetic meets neon lighting. Tron-inspired geometry meets industrial sci-fi.
+            Estética low-poly con iluminación neón. Geometría inspirada en Tron con ciencia ficción industrial.
           </p>
         </div>
 
