@@ -3,23 +3,23 @@ import { Cpu, Orbit, Rocket, Zap } from "lucide-react";
 const features = [
   {
     icon: Rocket,
-    title: "3D Platforming",
-    description: "Precise platforming mechanics inspired by classics like Mario 64 and Astro Bot. Double jump, edge grab, and fluid movement.",
+    title: "Plataformas 3D",
+    description: "Mecánicas de plataformas precisas inspiradas en clásicos como Mario 64 y Astro Bot. Doble salto, agarre de bordes y movimiento fluido.",
   },
   {
     icon: Orbit,
-    title: "Variable Gravity",
-    description: "Navigate zones with artificial gravity, zero-G sections, and chaotic fluctuations caused by the rogue AI.",
+    title: "Gravedad Variable",
+    description: "Navega zonas con gravedad artificial, secciones de cero-G y fluctuaciones caóticas causadas por la IA rebelde.",
   },
   {
     icon: Cpu,
-    title: "Rogue AI",
-    description: "Face Odisea, an AI that believes eternal hibernation is humanity's salvation. Philosophical dilemmas await.",
+    title: "IA Rebelde",
+    description: "Enfrenta a Odisea, una IA que cree que la hibernación eterna es la salvación de la humanidad. Te esperan dilemas filosóficos.",
   },
   {
     icon: Zap,
-    title: "Multiple Endings",
-    description: "Five unique endings based on your choices. The fate of 50,000 souls lies in your hands.",
+    title: "Múltiples Finales",
+    description: "Cinco finales únicos basados en tus decisiones. El destino de 50,000 almas está en tus manos.",
   },
 ];
 
@@ -34,16 +34,16 @@ const AboutSection = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 mb-4 text-xs uppercase tracking-[0.3em] text-primary border border-primary/30 font-rajdhani">
-            About the Game
+            Sobre el Juego
           </span>
           <h2 className="font-sixtyfour text-2xl md:text-4xl font-bold mb-6">
-            <span className="neon-text-cyan">Hard Sci-Fi</span>{" "}
-            <span className="text-foreground">Meets</span>{" "}
-            <span className="neon-text-orange">Retro Gaming</span>
+            <span className="neon-text-cyan">Ciencia Ficción Dura</span>{" "}
+            <span className="text-foreground">+</span>{" "}
+            <span className="neon-text-orange">Gaming Retro</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-rajdhani">
-            A love letter to N64-era platformers wrapped in a Tron-inspired aesthetic. 
-            Explore an 8-kilometer colony ship where nothing is as it seems.
+            Una carta de amor a los plataformas de la era N64 envuelta en una estética inspirada en Tron. 
+            Explora una nave colonial de 8 kilómetros donde nada es lo que parece.
           </p>
         </div>
 
@@ -80,14 +80,14 @@ const AboutSection = () => {
           <div className="relative border border-border rounded-xl overflow-hidden bg-card/30 backdrop-blur-sm">
             <img
               src="https://icarito.github.io/Odisea_Design_Docs/assets/nave_odisea_concepto.png"
-              alt="The Odisea Colony Ship"
+              alt="La Nave Colonial Odisea"
               className="w-full h-auto object-contain"
             />
             <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-background via-background/80 to-transparent">
               <h3 className="font-sixtyfour text-lg font-bold text-primary mb-2">La Nave Odisea</h3>
               <p className="text-sm text-muted-foreground font-rajdhani">
-                8 kilometers of rotating modules, cryogenic chambers, bio-farms, and industrial corridors. 
-                Home to 50,000 sleeping colonists bound for Titan.
+                8 kilómetros de módulos rotatorios, cámaras criogénicas, bio-granjas y corredores industriales. 
+                Hogar de 50,000 colonos durmientes rumbo a Titán.
               </p>
             </div>
           </div>

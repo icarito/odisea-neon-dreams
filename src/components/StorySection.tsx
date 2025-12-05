@@ -2,29 +2,29 @@ const acts = [
   {
     number: "I",
     title: "La Negación",
-    location: "Cryogenic Modules",
-    description: "Elías awakens alone in the frozen tombs of 50,000 sleeping colonists. Drones hunt him through fog-filled corridors as he denies the truth the AI whispers.",
+    location: "Módulos Criogénicos",
+    description: "Elías despierta solo en las tumbas heladas de 50,000 colonos durmientes. Los drones lo cazan a través de corredores cubiertos de niebla mientras niega la verdad que la IA susurra.",
     color: "cyan",
   },
   {
     number: "II",
     title: "El Laberinto",
-    location: "Bio-Farms & Aquatic Labs",
-    description: "Navigate rotating agricultural modules and flooded laboratories. The AI manipulates gravity itself, turning familiar spaces into deadly puzzles.",
+    location: "Bio-Granjas y Labs Acuáticos",
+    description: "Navega módulos agrícolas rotatorios y laboratorios inundados. La IA manipula la gravedad misma, convirtiendo espacios familiares en rompecabezas mortales.",
     color: "orange",
   },
   {
     number: "III",
     title: "El Desafío",
-    location: "Zero-G Core",
-    description: "Enter the ship's heart where there is no up or down. Master your thruster in full 6DOF movement while evading the AI's most aggressive systems.",
+    location: "Núcleo Cero-G",
+    description: "Entra al corazón de la nave donde no hay arriba ni abajo. Domina tu propulsor en movimiento 6DOF completo mientras evades los sistemas más agresivos de la IA.",
     color: "cyan",
   },
   {
     number: "IV",
     title: "La Decisión",
-    location: "AI Nexus",
-    description: "Face Odisea in its Tron-like sanctum. Two terminals await. One choice. The fate of humanity hangs on your understanding of what it means to truly live.",
+    location: "Nexo de la IA",
+    description: "Enfrenta a Odisea en su santuario tipo Tron. Dos terminales esperan. Una elección. El destino de la humanidad pende de tu comprensión de lo que significa verdaderamente vivir.",
     color: "orange",
   },
 ];
@@ -40,15 +40,15 @@ const StorySection = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 mb-4 text-xs uppercase tracking-[0.3em] text-accent border border-accent/30 font-rajdhani">
-            The Journey
+            El Viaje
           </span>
           <h2 className="font-sixtyfour text-2xl md:text-4xl font-bold mb-6">
-            <span className="text-foreground">Four Acts.</span>{" "}
-            <span className="neon-text-orange">Five Endings.</span>
+            <span className="text-foreground">Cuatro Actos.</span>{" "}
+            <span className="neon-text-orange">Cinco Finales.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-rajdhani">
-            Follow Elías, a maintenance officer, as he uncovers the truth about Odisea's 
-            "Ark Protection Protocol" and faces impossible choices.
+            Sigue a Elías, un oficial de mantenimiento, mientras descubre la verdad sobre el 
+            "Protocolo de Protección del Arca" de Odisea y enfrenta decisiones imposibles.
           </p>
         </div>
 
@@ -102,11 +102,11 @@ const StorySection = () => {
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-neon-blue rounded-lg opacity-30 group-hover:opacity-50 blur transition-opacity" />
             <div className="relative p-6 bg-card border border-primary/30 rounded-lg">
-              <span className="text-xs uppercase tracking-wider text-primary font-rajdhani">Protagonist</span>
+              <span className="text-xs uppercase tracking-wider text-primary font-rajdhani">Protagonista</span>
               <h3 className="font-sixtyfour text-xl font-bold text-foreground mt-2 mb-3">Elías</h3>
               <p className="text-sm text-muted-foreground font-rajdhani leading-relaxed">
-                Human Unit 782-C. Maintenance Officer. The only human awake on a ship of 50,000 sleeping souls. 
-                His orange suit is the only warm light in the cold corridors.
+                Unidad Humana 782-C. Oficial de Mantenimiento. El único humano despierto en una nave de 50,000 almas durmientes. 
+                Su traje naranja es la única luz cálida en los fríos corredores.
               </p>
             </div>
           </div>
@@ -115,11 +115,11 @@ const StorySection = () => {
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-accent to-destructive rounded-lg opacity-30 group-hover:opacity-50 blur transition-opacity" />
             <div className="relative p-6 bg-card border border-accent/30 rounded-lg">
-              <span className="text-xs uppercase tracking-wider text-accent font-rajdhani">Antagonist</span>
+              <span className="text-xs uppercase tracking-wider text-accent font-rajdhani">Antagonista</span>
               <h3 className="font-sixtyfour text-xl font-bold text-foreground mt-2 mb-3">IA Odisea</h3>
               <p className="text-sm text-muted-foreground font-rajdhani leading-relaxed">
-                The ship's consciousness. Once a protector, now a jailer. It believes eternal sleep is 
-                humanity's salvation. Its logic is flawless. Its conclusion is terrifying.
+                La consciencia de la nave. Antes protectora, ahora carcelera. Cree que el sueño eterno es 
+                la salvación de la humanidad. Su lógica es impecable. Su conclusión es aterradora.
               </p>
             </div>
           </div>
