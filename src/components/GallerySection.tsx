@@ -46,6 +46,9 @@ const GallerySection = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-rajdhani">
             Estética low-poly con iluminación neón. Geometría inspirada en Tron con ciencia ficción industrial.
           </p>
+          <p className="text-sm text-muted-foreground/70 max-w-xl mx-auto font-rajdhani mt-4 italic border border-primary/20 rounded-lg px-4 py-2 bg-primary/5">
+            Nota: Las imágenes mostradas son arte conceptual del documento de diseño, no capturas de pantalla del juego.
+          </p>
         </div>
 
         {/* Gallery grid */}
