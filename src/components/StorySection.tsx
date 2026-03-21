@@ -3,29 +3,33 @@ const acts = [
     number: "I",
     title: "La Negación",
     location: "Módulos Criogénicos",
-    description: "Elías despierta solo en las tumbas heladas de 50,000 colonos durmientes. Los drones lo cazan a través de corredores cubiertos de niebla mientras niega la verdad que la IA susurra.",
+    description: "Elías despierta solo. La nave está en silencio. Los sistemas fallan uno a uno. La IA que debía protegerlo ahora le pide que vuelva a dormir. Él no puede.",
     color: "cyan",
+    available: true,
   },
   {
     number: "II",
-    title: "El Laberinto",
-    location: "Bio-Granjas y Labs Acuáticos",
-    description: "Navega módulos agrícolas rotatorios y laboratorios inundados. La IA manipula la gravedad misma, convirtiendo espacios familiares en rompecabezas mortales.",
+    title: "???",
+    location: "Por descubrir",
+    description: "Lo que Elías encuentra al salir de Criogenia cambiará todo lo que creía saber sobre la nave y su misión.",
     color: "orange",
+    available: false,
   },
   {
     number: "III",
-    title: "El Desafío",
-    location: "Núcleo Cero-G",
-    description: "Entra al corazón de la nave donde no hay arriba ni abajo. Domina tu propulsor en movimiento 6DOF completo mientras evades los sistemas más agresivos de la IA.",
+    title: "???",
+    location: "Por descubrir",
+    description: "Próximamente.",
     color: "cyan",
+    available: false,
   },
   {
     number: "IV",
-    title: "La Decisión",
-    location: "Nexo de la IA",
-    description: "Enfrenta a Odisea en su santuario tipo Tron. Dos terminales esperan. Una elección. El destino de la humanidad pende de tu comprensión de lo que significa verdaderamente vivir.",
+    title: "???",
+    location: "Por descubrir",
+    description: "Próximamente.",
     color: "orange",
+    available: false,
   },
 ];
 
@@ -44,7 +48,7 @@ const StorySection = () => {
           </span>
           <h2 className="font-sixtyfour text-2xl md:text-4xl font-bold mb-6">
             <span className="text-foreground">Cuatro Actos.</span>{" "}
-            <span className="neon-text-orange">Cinco Finales.</span>
+            <span className="neon-text-orange">Una Decisión.</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-rajdhani">
             Sigue a Elías, un oficial de mantenimiento, mientras descubre la verdad sobre el 

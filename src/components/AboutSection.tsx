@@ -4,22 +4,22 @@ const features = [
   {
     icon: Rocket,
     title: "Plataformas 3D",
-    description: "Mecánicas de plataformas precisas inspiradas en clásicos como Mario 64 y Astro Bot. Doble salto, agarre de bordes y movimiento fluido.",
+    description: "Mecánicas de plataformas precisas inspiradas en clásicos como Mario 64. Movimiento fluido, puzzles de entorno y exploración de una nave colonial de 8 km.",
   },
   {
     icon: Orbit,
-    title: "Gravedad Variable",
-    description: "Navega zonas con gravedad artificial, secciones de cero-G y fluctuaciones caóticas causadas por la IA rebelde.",
+    title: "Puzzles de Entorno",
+    description: "Usa el entorno a tu favor: activa consolas, mueve objetos, sincroniza tu movimiento con los sistemas de la nave para avanzar.",
   },
   {
     icon: Cpu,
-    title: "IA Rebelde",
-    description: "Enfrenta a Odisea, una IA que cree que la hibernación eterna es la salvación de la humanidad. Te esperan dilemas filosóficos.",
+    title: "IA Antagonista",
+    description: "Enfrenta a Odisea, una IA que cree que la hibernación eterna es la salvación de la humanidad. No dispara. No ataca. Argumenta.",
   },
   {
     icon: Zap,
-    title: "Múltiples Finales",
-    description: "Cinco finales únicos basados en tus decisiones. El destino de 50,000 almas está en tus manos.",
+    title: "Narrativa Ambiental",
+    description: "La historia se cuenta a través del espacio. Cada sala, cada pantalla, cada cápsula criogénica tiene algo que decir.",
   },
 ];
 

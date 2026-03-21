@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const PlaySection = () => {
   const handlePlayDemo = () => {
-    window.open("https://icarito.github.io/Odisea/HTML5/", "_blank", "noopener,noreferrer");
+    window.open("https://icarito.github.io/Odisea/", "_blank", "noopener,noreferrer");
   };
 
   return (

@@ -8,66 +8,66 @@ import {
 
 const logEntries = [
   {
-    date: "5 de Diciembre, 2025",
-    stardate: "2025.339",
+    date: "21 de Marzo, 2026",
+    stardate: "2026.080",
     icon: Gamepad2,
-    title: "Sistemas de Cooperación Tripulante",
-    summary: "Módulo de pantalla dividida operacional",
+    title: "Diseño del Nivel 1 — Sala de Criogenia",
+    summary: "Especificación completa del pasillo en L, cubículo de control y flujo jugable",
     systems: [
-      "Sistema de viewport dual activado",
-      "Módulo de entrada cooperativa instalado",
-      "Singleton GameConfig consolidado para detección de configuración",
-      "Botón de activación 'Coop' integrado en interfaz principal"
+      "Storyboard momento a momento de los 5 beats del Nivel 1",
+      "Layout definido: pasillo en L con holopantallas pasivas",
+      "Mecánica terminal → botón → puerta documentada",
+      "Primera aparición de la IA Odisea integrada al flujo",
+      "Canvas visual del flujo jugable creado en Obsidian",
+      "Design Intent Tree (DIT) con métricas de éxito por sala"
+    ],
+    color: "cyan"
+  },
+  {
+    date: "17 de Marzo, 2026",
+    stardate: "2026.076",
+    icon: Cpu,
+    title: "Consultoría de Diseño — Sesión de Nivel",
+    summary: "Definición de mecánicas del Acto I y estructura de las tres primeras salas",
+    systems: [
+      "Mecánica principal: plataformas + puzzles de entorno (sin combate)",
+      "Sala 1: Criogenia (interruptores, ascensor, puertas)",
+      "Sala 2: Transporte (empujar cajas sobre cintas transportadoras)",
+      "Sala 3: Patrulla DDC (timing + desactivación de peligros)",
+      "Decisión: terminal hackeahable como tutorial de interacción",
+      "Sistema de riel para cinemática de apertura definido"
     ],
     color: "orange"
   },
   {
-    date: "4 de Diciembre, 2025",
-    stardate: "2025.338",
+    date: "5 de Diciembre, 2025",
+    stardate: "2025.339",
     icon: Settings,
-    title: "Calibración de Controles de Navegación",
-    summary: "Optimización completa de sistemas de entrada analógica",
+    title: "Refactor Core V2 — Determinismo y Replay",
+    summary: "Sistema de replay determinista implementado y probado",
     systems: [
-      "Parámetros de calidad recalibrados - rendimiento optimizado",
-      "Controles analógicos afinados - respuesta de cámara mejorada",
-      "Mecánicas de velocidad externa y salto refactorizadas",
-      "Menú principal actualizado - splash screen y transiciones instaladas",
-      "Componente de movimiento integrado - lógica de joystick optimizada",
-      "Eje X de joystick invertido según especificaciones ergonómicas"
+      "Core V2 con inputs deterministas operacional",
+      "OdysseyScript (OYS): DSL para tests y replays",
+      "Suite de pruebas de determinismo automatizada",
+      "Protocolo de desarrollo para agentes y humanos establecido",
+      "Singleton GameConfig consolidado",
     ],
     color: "cyan"
   },
   {
     date: "3 de Diciembre, 2025",
     stardate: "2025.337",
-    icon: Cpu,
-    title: "Estabilización de Sistemas de Cámara",
-    summary: "Corrección crítica de deriva + pipeline de despliegue automático",
+    icon: Cog,
+    title: "Prototipo de Movimiento 3ra Persona",
+    summary: "Controlador de Elías funcional con cámara estabilizada",
     systems: [
-      "Lógica de flotación y animaciones añadidas al control piloto",
-      "Rotación de cámara optimizada - seguimiento suavizado implementado",
-      "HITO: Deriva de cámara corregida definitivamente",
-      "Anomalía de 'doble giro' del piloto solucionada",
-      "Sistema de autodeploy configurado - GitHub Pages operacional",
-      "Exportaciones HTML5 y configuración PWA preparadas"
+      "Movimiento momentum-based con curvas de aceleración",
+      "Deriva de cámara corregida definitivamente",
+      "Doble salto y agarre de bordes implementados",
+      "Sistema de autodeploy configurado — GitHub Pages operacional",
+      "Exportación HTML5 lista para testing"
     ],
     color: "orange"
-  },
-  {
-    date: "2 de Diciembre, 2025",
-    stardate: "2025.336",
-    icon: Cog,
-    title: "Instalación de Mecánicas de Nivel",
-    summary: "Zonas de efecto, sistema de respawn y gestión de recursos",
-    systems: [
-      "Sistema de gestión de audio instalado",
-      "Checkpoints, KillZone y WindZone implementados",
-      "Lógica de muerte y respawn cinematográfico operacional",
-      "Efectos de gravedad y viento ascendente calibrados",
-      "Plugin CSGToMeshInstance integrado en herramientas de desarrollo",
-      "Iluminación optimizada para rendimiento GLES2"
-    ],
-    color: "cyan"
   }
 ];
 
@@ -103,7 +103,7 @@ const DevlogSection = () => {
             <span className="text-foreground">Técnica</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-rajdhani">
-            Registro de mantenimiento y actualizaciones de sistemas. Diciembre 2025.
+            Registro de mantenimiento y actualizaciones de sistemas. En desarrollo activo.
           </p>
         </div>
 
