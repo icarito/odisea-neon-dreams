@@ -30,7 +30,7 @@ const PlaySection = () => {
           </h2>
         </div>
 
-        {/* ⚠⚠⚠ MEGA WARNING BANNER ⚠⚠⚠ */}
+        {/* MEGA WARNING BANNER */}
         <div className="max-w-4xl mx-auto mb-8">
           <div className="relative border-2 border-destructive/80 rounded-xl overflow-hidden bg-destructive/10">
             <div className="absolute inset-0 bg-[repeating-linear-gradient(-45deg,transparent,transparent_10px,hsl(var(--destructive)/0.03)_10px,hsl(var(--destructive)/0.03)_20px)]" />
@@ -61,11 +61,9 @@ const PlaySection = () => {
         {/* Industrial warning panel */}
         <div className="max-w-3xl mx-auto">
           <div className="relative">
-            {/* Outer glow */}
             <div className="absolute -inset-1 bg-gradient-to-r from-accent via-destructive to-accent rounded-xl opacity-30 blur-sm" />
             
             <div className="relative bg-card border-2 border-accent/50 rounded-xl overflow-hidden">
-              {/* Warning header bar */}
               <div className="flex items-center gap-3 px-6 py-4 bg-accent/20 border-b-2 border-accent/30">
                 <Radiation className="w-6 h-6 text-accent animate-pulse" />
                 <span className="font-sixtyfour text-sm font-bold text-accent uppercase tracking-wider">
@@ -74,7 +72,6 @@ const PlaySection = () => {
                 <Radiation className="w-6 h-6 text-accent animate-pulse" />
               </div>
 
-              {/* Warning content */}
               <div className="p-8">
                 <div className="flex items-start gap-6">
                   <div className="hidden sm:flex p-4 bg-destructive/10 rounded-lg border-2 border-destructive/30">
@@ -108,6 +105,47 @@ const PlaySection = () => {
                         Este prototipo recolecta <strong className="text-foreground">datos anónimos de rendimiento</strong> (FPS, errores). Sin datos personales.
                       </p>
                     </div>
+
+                    <div className="mt-6 p-4 bg-muted/30 rounded-lg border border-border">
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground font-rajdhani">Controles:</span>
+                      <div className="flex flex-wrap gap-4 mt-2 text-sm text-muted-foreground font-rajdhani">
+                        <span className="flex items-center gap-2">
+                          <kbd className="px-2 py-1 bg-muted rounded text-xs font-mono border border-border">WASD</kbd>
+                          Mover
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <kbd className="px-2 py-1 bg-muted rounded text-xs font-mono border border-border">Space</kbd>
+                          Saltar
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <kbd className="px-2 py-1 bg-muted rounded text-xs font-mono border border-border">Mouse</kbd>
+                          Mirar
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 flex justify-center">
+                  <Button
+                    variant="hero"
+                    size="xl"
+                    onClick={handlePlayDemo}
+                    className="gap-3 animate-pulse hover:animate-none"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                    Abrir Demo en Nueva Ventana
+                  </Button>
+                </div>
+              </div>
+
+              <div className="px-6 py-3 bg-muted/20 border-t border-border flex items-center justify-center gap-2 text-xs text-muted-foreground font-rajdhani">
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                Tu feedback ayuda a dar forma al juego final
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Links */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
