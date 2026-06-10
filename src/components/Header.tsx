@@ -10,6 +10,7 @@ const Header = () => {
     { label: "Historia", href: "#story" },
     { label: "Galería", href: "#gallery" },
     { label: "Devlog", href: "#devlog" },
+    { label: "¿Cómo se hace?", href: "#how-its-made" },
     { label: "Técnico", href: "#tech" },
   ];
 
