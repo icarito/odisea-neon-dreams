@@ -3,22 +3,22 @@ import { X } from "lucide-react";
 
 const images = [
   {
-    src: "https://icarito.github.io/Odisea_Design_Docs/assets/odisea_master_portada.png",
+    src: "/odisea-neon-dreams/assets/odisea_master_portada.png",
     title: "Concepto Principal",
     description: "La nave colonial Odisea en toda su gloria industrial",
   },
   {
-    src: "https://icarito.github.io/Odisea_Design_Docs/assets/nave_odisea_exterior.jpeg",
+    src: "/odisea-neon-dreams/assets/nave_odisea_exterior.jpeg",
     title: "Exterior de la Nave",
     description: "8 kilómetros de la última esperanza de la humanidad",
   },
   {
-    src: "https://icarito.github.io/Odisea_Design_Docs/assets/nave_odisea_seccion.jpeg",
+    src: "/odisea-neon-dreams/assets/nave_odisea_seccion.jpeg",
     title: "Sección Transversal",
     description: "Módulos rotatorios, cámaras criogénicas y el núcleo central",
   },
   {
-    src: "https://icarito.github.io/Odisea_Design_Docs/assets/nave_odisea_esquema.png",
+    src: "/odisea-neon-dreams/assets/nave_odisea_esquema.png",
     title: "Plano Técnico",
     description: "Estructura de la nave y zonas de gravedad",
   },
