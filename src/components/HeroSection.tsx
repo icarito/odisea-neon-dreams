@@ -41,9 +41,9 @@ const HeroSection = () => {
 
             <div className="animate-slide-up opacity-0 flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start" style={{ animationDelay: "400ms", animationFillMode: "forwards" }}>
               <Button variant="hero" size="xl" asChild>
-                <a href="#play" className="gap-3">
+                <a href="#download" className="gap-3">
                   <Gamepad2 className="w-5 h-5" />
-                  Probar Alpha
+                  Descargar Ahora
                 </a>
               </Button>
               <Button variant="neonCyan" size="xl" asChild>
