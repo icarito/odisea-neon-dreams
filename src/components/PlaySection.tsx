@@ -105,6 +105,9 @@ const PlaySection = () => {
                         Este prototipo recolecta <strong className="text-foreground">datos anónimos de rendimiento</strong> (FPS, errores). Sin datos personales.
                       </p>
                     </div>
+                  </div>
+                </div>
+              </div>
 
                     <div className="mt-6 p-4 bg-muted/30 rounded-lg border border-border">
                       <span className="text-xs uppercase tracking-wider text-muted-foreground font-rajdhani">Controles:</span>
@@ -171,6 +174,9 @@ const PlaySection = () => {
               Documentos de Diseño
             </a>
           </Button>
+        </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
