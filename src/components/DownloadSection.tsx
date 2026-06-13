@@ -56,7 +56,7 @@ const builds: PlatformBuild[] = [
       { icon: Shield, text: "AppImage — sin instalación" },
     ],
     primaryLabel: "Descargar AppImage",
-    primaryUrl: "https://github.com/icarito/Odisea/releases",
+    primaryUrl: "https://github.com/icarito/Odisea/releases/tag/nightly",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
     sha256: "Disponible en la página de releases",
@@ -75,7 +75,7 @@ const builds: PlatformBuild[] = [
       { icon: Shield, text: "Portable — sin instalador" },
     ],
     primaryLabel: "Descargar .exe",
-    primaryUrl: "https://github.com/icarito/Odisea/releases",
+    primaryUrl: "https://github.com/icarito/Odisea/releases/tag/nightly",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
     sha256: "Disponible en la página de releases",
@@ -94,7 +94,7 @@ const builds: PlatformBuild[] = [
       { icon: Shield, text: "Instalación manual (APK)" },
     ],
     primaryLabel: "Descargar .apk",
-    primaryUrl: "https://github.com/icarito/Odisea/releases",
+    primaryUrl: "https://github.com/icarito/Odisea/releases/tag/nightly",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
   },
@@ -326,7 +326,7 @@ const DownloadSection = () => {
               <div className="flex flex-wrap items-center gap-3">
                 {displayedBuilds.length > 1 && !displayedBuilds.some(b => b.id === 'android') && (
                   <a
-                    href="https://github.com/icarito/Odisea/releases"
+                    href="https://github.com/icarito/Odisea/releases/tag/nightly"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-4 py-2 text-sm font-rajdhani text-muted-foreground hover:text-foreground border border-border hover:border-accent/50 rounded-lg bg-card/30 hover:bg-card/50 transition-all duration-300"
@@ -338,7 +338,7 @@ const DownloadSection = () => {
                   </a>
                 )}
                 <a
-                  href="https://github.com/icarito/Odisea/releases"
+                  href="https://github.com/icarito/Odisea/releases/tag/nightly"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 text-sm font-rajdhani text-muted-foreground hover:text-foreground border border-border hover:border-primary/50 rounded-lg bg-card/30 hover:bg-card/50 transition-all duration-300"
