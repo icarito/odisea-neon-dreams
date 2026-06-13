@@ -2,10 +2,6 @@ import { AlertTriangle, ExternalLink, Radiation, Skull, Terminal } from "lucide-
 import { Button } from "./ui/button";
 
 const PlaySection = () => {
-  const handlePlayDemo = () => {
-    window.open("https://odisea.netlify.app/", "_blank", "noopener,noreferrer");
-  };
-
   return (
     <section id="play" className="relative py-24 md:py-32 overflow-hidden">
       {/* Industrial background */}
@@ -112,27 +108,24 @@ const PlaySection = () => {
                 </div>
               </div>
 
-        {/* Quick Play link */}
-        <div className="flex flex-col items-center justify-center gap-4 mt-10">
-          <Button variant="neonCyan" size="lg" asChild>
-            <a
-              href="https://odisea.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gap-2"
-            >
-              <ExternalLink className="w-5 h-5" />
-              Probar Demo WebGL (bajo tu propio riesgo)
-            </a>
-          </Button>
-          <p className="text-xs text-muted-foreground font-rajdhani">
-            ¿Buscás builds descargables?{' '}
-            <a href="#download" className="text-primary hover:underline">Ir a Descargas</a>
-          </p>
-        </div>
-            </div>
-          </div>
-        </div>
+              {/* Quick Play link */}
+              <div className="flex flex-col items-center justify-center gap-4 mt-10 p-8 border-t-2 border-accent/10">
+                <Button variant="neonCyan" size="lg" asChild>
+                  <a
+                    href="https://odisea.netlify.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="gap-2"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                    Probar Demo WebGL (bajo tu propio riesgo)
+                  </a>
+                </Button>
+                <p className="text-xs text-muted-foreground font-rajdhani">
+                  ¿Buscás builds descargables?{' '}
+                  <a href="#download" className="text-primary hover:underline">Ir a Descargas</a>
+                </p>
+              </div>
             </div>
           </div>
         </div>
