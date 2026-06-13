@@ -37,7 +37,7 @@ const Header = () => {
               </a>
             ))}
             <Button variant="neonOrange" size="sm" asChild>
-              <a href="#play">Jugar Alpha</a>
+              <a href="#download">Descargar</a>
             </Button>
           </nav>
 
@@ -65,7 +65,7 @@ const Header = () => {
                 </a>
               ))}
               <Button variant="neonOrange" size="sm" asChild>
-                <a href="#play">Jugar Alpha</a>
+                <a href="#download">Descargar</a>
               </Button>
             </div>
           </nav>

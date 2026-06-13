@@ -1,4 +1,4 @@
-import { AlertTriangle, ExternalLink, Github, Radiation, Skull, Terminal } from "lucide-react";
+import { AlertTriangle, ExternalLink, Radiation, Skull, Terminal } from "lucide-react";
 import { Button } from "./ui/button";
 
 const PlaySection = () => {
@@ -112,30 +112,26 @@ const PlaySection = () => {
                 </div>
               </div>
 
-        {/* Links */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
+        {/* Quick Play link */}
+        <div className="flex flex-col items-center justify-center gap-4 mt-10">
           <Button variant="neonCyan" size="lg" asChild>
             <a
-              href="https://github.com/icarito/Odisea"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gap-2"
-            >
-              <Github className="w-5 h-5" />
-              Ver Código Fuente
-            </a>
-          </Button>
-          <Button variant="outline" size="lg" asChild>
-            <a
-              href="https://icarito.github.io/Odisea_Design_Docs/"
+              href="https://icarito.github.io/Odisea/"
               target="_blank"
               rel="noopener noreferrer"
               className="gap-2"
             >
               <ExternalLink className="w-5 h-5" />
-              Documentos de Diseño
+              Probar Demo WebGL (bajo tu propio riesgo)
             </a>
           </Button>
+          <p className="text-xs text-muted-foreground font-rajdhani">
+            ¿Buscás builds descargables?{' '}
+            <a href="#download" className="text-primary hover:underline">Ir a Descargas</a>
+          </p>
+        </div>
+            </div>
+          </div>
         </div>
             </div>
           </div>
