@@ -1,4 +1,4 @@
-import { AlertTriangle, ExternalLink, Radiation, Skull, Terminal } from "lucide-react";
+import { AlertTriangle, ExternalLink, Github, Radiation } from "lucide-react";
 import { Button } from "./ui/button";
 
 const PlaySection = () => {
@@ -30,34 +30,6 @@ const PlaySection = () => {
           </h2>
         </div>
 
-        {/* ⚠⚠⚠ MEGA WARNING BANNER ⚠⚠⚠ */}
-        <div className="max-w-4xl mx-auto mb-8">
-          <div className="relative border-2 border-destructive/80 rounded-xl overflow-hidden bg-destructive/10">
-            <div className="absolute inset-0 bg-[repeating-linear-gradient(-45deg,transparent,transparent_10px,hsl(var(--destructive)/0.03)_10px,hsl(var(--destructive)/0.03)_20px)]" />
-            <div className="relative p-6 text-center">
-              <Skull className="w-10 h-10 text-destructive mx-auto mb-3 animate-pulse" />
-              <h3 className="font-sixtyfour text-xl md:text-2xl font-bold text-destructive mb-3 uppercase tracking-wider">
-                ⚠ ¡ALTO! ⚠
-              </h3>
-              <p className="font-sixtyfour text-sm md:text-base text-destructive/90 leading-relaxed max-w-2xl mx-auto">
-                ESTO ES UN PROTOTIPO <strong className="text-destructive underline">PRE-PRE-ALFA</strong>
-              </p>
-              <div className="mt-3 space-y-1">
-                <p className="text-xs md:text-sm text-destructive/80 font-rajdhani">
-                  ► HAY BUGS ◄ ► LOS CONTROLES PUEDEN FALLAR ◄ ► ASSETS PROVISIONALES ◄
-                </p>
-                <p className="text-xs md:text-sm text-destructive/80 font-rajdhani">
-                  ► MECÁNICAS INCOMPLETAS ◄ ► SIN OPTIMIZACIÓN ◄ ► PUEDE CRASHEAR ◄
-                </p>
-              </div>
-              <div className="mt-4 flex items-center justify-center gap-2 text-xs text-muted-foreground font-rajdhani">
-                <Terminal className="w-3 h-3" />
-                <span>Build de desarrollo — No representa la calidad del producto final</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Industrial warning panel */}
         <div className="max-w-3xl mx-auto">
           <div className="relative">
@@ -83,7 +55,7 @@ const PlaySection = () => {
                   
                   <div className="flex-1">
                     <h3 className="font-sixtyfour text-lg font-bold text-accent mb-4">
-                      BUILD ALPHA — INESTABLE
+                      BUILD ALPHA - INESTABLE
                     </h3>
                     
                     <div className="space-y-3 text-muted-foreground font-rajdhani leading-relaxed">
@@ -101,40 +73,78 @@ const PlaySection = () => {
                       </p>
                       <p className="flex items-start gap-2">
                         <span className="text-accent font-bold">►</span>
-                        <strong className="text-foreground">Los controles pueden no responder correctamente</strong> — abre en ventana nueva para mejor experiencia.
+                        <strong className="text-foreground">Los controles pueden no responder correctamente</strong> - abre en ventana nueva para mejor experiencia.
                       </p>
-                      <p className="flex items-start gap-2">
-                        <span className="text-accent font-bold">►</span>
-                        Este prototipo recolecta <strong className="text-foreground">datos anónimos de rendimiento</strong> (FPS, errores). Sin datos personales.
-                      </p>
+                    </div>
+
+                    {/* Controls info */}
+                    <div className="mt-6 p-4 bg-muted/30 rounded-lg border border-border">
+                      <span className="text-xs uppercase tracking-wider text-muted-foreground font-rajdhani">Controles:</span>
+                      <div className="flex flex-wrap gap-4 mt-2 text-sm text-muted-foreground font-rajdhani">
+                        <span className="flex items-center gap-2">
+                          <kbd className="px-2 py-1 bg-muted rounded text-xs font-mono border border-border">WASD</kbd>
+                          Mover
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <kbd className="px-2 py-1 bg-muted rounded text-xs font-mono border border-border">Space</kbd>
+                          Saltar
+                        </span>
+                        <span className="flex items-center gap-2">
+                          <kbd className="px-2 py-1 bg-muted rounded text-xs font-mono border border-border">Mouse</kbd>
+                          Mirar
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                {/* CTA Button */}
+                <div className="mt-8 flex justify-center">
+                  <Button
+                    variant="hero"
+                    size="xl"
+                    onClick={handlePlayDemo}
+                    className="gap-3 animate-pulse hover:animate-none"
+                  >
+                    <ExternalLink className="w-5 h-5" />
+                    Abrir Demo en Nueva Ventana
+                  </Button>
+                </div>
               </div>
 
-        {/* Quick Play link */}
-        <div className="flex flex-col items-center justify-center gap-4 mt-10">
+              {/* Footer bar */}
+              <div className="px-6 py-3 bg-muted/20 border-t border-border flex items-center justify-center gap-2 text-xs text-muted-foreground font-rajdhani">
+                <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                Tu feedback ayuda a dar forma al juego final
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Links */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12">
           <Button variant="neonCyan" size="lg" asChild>
             <a
-              href="https://odisea.netlify.app/"
+              href="https://github.com/icarito/Odisea"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="gap-2"
+            >
+              <Github className="w-5 h-5" />
+              Ver Código Fuente
+            </a>
+          </Button>
+          <Button variant="outline" size="lg" asChild>
+            <a
+              href="https://icarito.github.io/Odisea_Design_Docs/"
               target="_blank"
               rel="noopener noreferrer"
               className="gap-2"
             >
               <ExternalLink className="w-5 h-5" />
-              Probar Demo WebGL (bajo tu propio riesgo)
+              Documentos de Diseño
             </a>
           </Button>
-          <p className="text-xs text-muted-foreground font-rajdhani">
-            ¿Buscás builds descargables?{' '}
-            <a href="#download" className="text-primary hover:underline">Ir a Descargas</a>
-          </p>
-        </div>
-            </div>
-          </div>
-        </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
