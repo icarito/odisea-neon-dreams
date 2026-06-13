@@ -79,7 +79,7 @@ const AboutSection = () => {
           <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-transparent to-accent/20 rounded-xl blur-2xl opacity-50" />
           <div className="relative border border-border rounded-xl overflow-hidden bg-card/30 backdrop-blur-sm">
             <img
-              src="https://icarito.github.io/Odisea_Design_Docs/assets/nave_odisea_concepto.png"
+              src="/odisea-neon-dreams/assets/nave_odisea_concepto.png"
               alt="La Nave Colonial Odisea"
               className="w-full h-auto object-contain"
             />

@@ -59,7 +59,7 @@ const HeroSection = () => {
               <div className="absolute -inset-2 bg-gradient-to-r from-neon-cyan via-neon-blue to-accent rounded-lg opacity-50 blur-sm animate-glow-pulse" />
               <div className="relative border-2 border-neon-cyan/50 rounded-lg overflow-hidden neon-border-cyan">
                 <img
-                  src="https://icarito.github.io/Odisea_Design_Docs/assets/odisea_master_portada.png"
+                  src="/odisea-neon-dreams/assets/odisea_master_portada.png"
                   alt="Odisea - El Arca Silenciosa"
                   className="w-full h-auto object-cover"
                 />

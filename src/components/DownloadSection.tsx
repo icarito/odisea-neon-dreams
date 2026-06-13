@@ -38,7 +38,7 @@ const builds: PlatformBuild[] = [
       { icon: Cpu, text: "WebGL 2.0 (GPU con OpenGL ES 3.0+)" },
     ],
     primaryLabel: "Jugar Ahora",
-    primaryUrl: "https://icarito.github.io/Odisea/",
+    primaryUrl: "https://odisea.netlify.app/",
     secondaryLabel: "Código Fuente",
     secondaryUrl: "https://github.com/icarito/Odisea",
   },

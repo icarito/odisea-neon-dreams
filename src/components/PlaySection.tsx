@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const PlaySection = () => {
   const handlePlayDemo = () => {
-    window.open("https://icarito.github.io/Odisea/", "_blank", "noopener,noreferrer");
+    window.open("https://odisea.netlify.app/", "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -116,7 +116,7 @@ const PlaySection = () => {
         <div className="flex flex-col items-center justify-center gap-4 mt-10">
           <Button variant="neonCyan" size="lg" asChild>
             <a
-              href="https://icarito.github.io/Odisea/"
+              href="https://odisea.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
               className="gap-2"

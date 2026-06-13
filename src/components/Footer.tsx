@@ -26,7 +26,7 @@ const Footer = () => {
               <span className="text-sm font-rajdhani">GitHub</span>
             </a>
             <a
-              href="https://icarito.github.io/Odisea_Design_Docs/"
+              href="https://icarito.github.io/Odisea_Design_Docs/Odisea/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
