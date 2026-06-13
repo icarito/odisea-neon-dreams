@@ -8,6 +8,63 @@ import {
 
 const logEntries = [
   {
+    date: "13 de Junio, 2026",
+    stardate: "2026.164",
+    icon: Download,
+    title: "FD-173: Smart Native Download Detection",
+    summary: "Detección automática de plataforma en las descargas del website — recomienda el build nativo según el SO del visitante",
+    systems: [
+      "Hook usePlatformDetect que detecta Windows/Linux/Android/iOS/macOS",
+      "Tarjetas de descarga con glow persistente para build recomendado",
+      "Integración con el deploy de GitHub Pages y builds nocturnos",
+      "Android APK como opción primaria al detectar dispositivo móvil"
+    ],
+    color: "orange"
+  },
+  {
+    date: "1 de Junio, 2026",
+    stardate: "2026.152",
+    icon: Wrench,
+    title: "FD-050: Height Alignment + Scaffold Liminal",
+    summary: "Plataformas de scaffold con height alignment exacto y espacios liminares estilo backrooms",
+    systems: [
+      "Height alignment entre módulos conectados sin forzar HEIGHT_STEP genérico",
+      "Espacios liminares en transiciones (backrooms entre casco duro y terrazas)",
+      "Preparado para streaming desde thread",
+    ],
+    color: "cyan"
+  },
+  {
+    date: "29 de Mayo, 2026",
+    stardate: "2026.149",
+    icon: Gamepad2,
+    title: "Sala 1 — Módulo Criogenia Blockout",
+    summary: "Especificación completa del Módulo Criogenia: 3 niveles verticales, puzzle principal, lore",
+    systems: [
+      "3 niveles verticales: planta baja, entrepiso, pasarela superior",
+      "Puzzle principal: consola → gap → push box → lever → puerta A-7",
+      "Checkpoints después del gap y después de la palanca",
+      "Cápsula de Elías en fila de criopods con RadialScatter",
+      "Fugas de gas (LeakEmitter) que se detienen con PedestalButton",
+      "Airlock V2 con TransitionFX integrado",
+    ],
+    color: "orange"
+  },
+  {
+    date: "27 de Mayo, 2026",
+    stardate: "2026.147",
+    icon: Cog,
+    title: "PRC-07: Protocolo de Reactivación Post-Criogénica",
+    summary: "Secuencia guía para los primeros ~6-8 min del Vertical Slice",
+    systems: [
+      "Tutorial integrado: confirmar UI, moverse, leer entorno, interactuar",
+      "Multi-tool se encuentra después de salir del módulo Criogenia",
+      "Sin armas — solo herramientas de mantenimiento",
+      "Odisea IA como narradora-hostil desde el primer contacto",
+    ],
+    color: "cyan"
+  },
+  {
     date: "21 de Marzo, 2026",
     stardate: "2026.080",
     icon: Gamepad2,
