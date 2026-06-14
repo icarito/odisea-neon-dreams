@@ -1,6 +1,11 @@
 import { ChevronDown, Gamepad2 } from "lucide-react";
 import { Button } from "./ui/button";
 
+const scrollToSection = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
+
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-hero">
@@ -40,14 +45,12 @@ const HeroSection = () => {
             </p>
 
             <div className="animate-slide-up opacity-0 flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start" style={{ animationDelay: "400ms", animationFillMode: "forwards" }}>
-              <Button variant="hero" size="xl" asChild>
-                <a href="#download" className="gap-3">
+              <Button variant="hero" size="xl" onClick={() => scrollToSection("download")}>
                   <Gamepad2 className="w-5 h-5" />
                   Descargar Ahora
-                </a>
               </Button>
-              <Button variant="neonCyan" size="xl" asChild>
-                <a href="#about">Conocer Más</a>
+              <Button variant="neonCyan" size="xl" onClick={() => scrollToSection("about")}>
+                  Conocer Más
               </Button>
             </div>
           </div>
@@ -71,10 +74,10 @@ const HeroSection = () => {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <a href="#about" className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+          <button onClick={() => scrollToSection("about")} className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer">
             <span className="text-xs uppercase tracking-widest font-rajdhani">Explorar</span>
             <ChevronDown className="w-5 h-5" />
-          </a>
+          </button>
         </div>
       </div>
     </section>

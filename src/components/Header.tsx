@@ -2,6 +2,11 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
 
+const scrollTo = (id: string) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+};
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -36,8 +41,8 @@ const Header = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="neonOrange" size="sm" asChild>
-              <a href="#download">Descargar</a>
+            <Button variant="neonOrange" size="sm" onClick={() => { scrollTo("download"); setIsMenuOpen(false); }}>
+              Descargar
             </Button>
           </nav>
 
@@ -64,8 +69,8 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button variant="neonOrange" size="sm" asChild>
-                <a href="#download">Descargar</a>
+              <Button variant="neonOrange" size="sm" onClick={() => { scrollTo("download"); setIsMenuOpen(false); }}>
+                Descargar
               </Button>
             </div>
           </nav>
