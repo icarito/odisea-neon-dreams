@@ -11,12 +11,12 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: "Acerca", href: "#about" },
-    { label: "Historia", href: "#story" },
-    { label: "Galería", href: "#gallery" },
-    { label: "Devlog", href: "#devlog" },
-    { label: "¿Cómo se hace?", href: "#how-its-made" },
-    { label: "Técnico", href: "#tech" },
+    { label: "Acerca", id: "about" },
+    { label: "Historia", id: "story" },
+    { label: "Galería", id: "gallery" },
+    { label: "Devlog", id: "devlog" },
+    { label: "¿Cómo se hace?", id: "how-its-made" },
+    { label: "Técnico", id: "tech" },
   ];
 
   return (
@@ -35,7 +35,8 @@ const Header = () => {
             {navItems.map((item) => (
               <a
                 key={item.label}
-                href={item.href}
+                href={"#" + item.id}
+                onClick={(e) => { e.preventDefault(); scrollTo(item.id); }}
                 className="font-rajdhani text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors duration-300"
               >
                 {item.label}
@@ -62,9 +63,9 @@ const Header = () => {
               {navItems.map((item) => (
                 <a
                   key={item.label}
-                  href={item.href}
+                  href={"#" + item.id}
+                  onClick={(e) => { e.preventDefault(); scrollTo(item.id); setIsMenuOpen(false); }}
                   className="font-rajdhani text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
