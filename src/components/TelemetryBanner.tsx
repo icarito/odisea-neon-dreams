@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Shield, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
 const TelemetryBanner = () => {
@@ -70,6 +71,12 @@ const TelemetryBanner = () => {
                   <Button variant="outline" size="sm" onClick={handleDecline} className="text-xs">
                     Rechazar (sin telemetría)
                   </Button>
+                  <Link
+                    to="/privacidad"
+                    className="text-xs font-rajdhani underline text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Política de privacidad
+                  </Link>
                 </div>
               </div>
             </div>

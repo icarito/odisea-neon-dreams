@@ -1,4 +1,5 @@
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -26,7 +27,7 @@ const Footer = () => {
               <span className="text-sm font-rajdhani">GitHub</span>
             </a>
             <a
-              href="https://icarito.github.io/Odisea_Design_Docs/Odisea/"
+              href="https://icarito.github.io/Odisea_Design_Docs/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
@@ -34,6 +35,13 @@ const Footer = () => {
               <ExternalLink className="w-5 h-5" />
               <span className="text-sm font-rajdhani">Documentación</span>
             </a>
+            <Link
+              to="/privacidad"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Shield className="w-5 h-5" />
+              <span className="text-sm font-rajdhani">Privacidad</span>
+            </Link>
           </div>
 
           {/* Copyright */}
