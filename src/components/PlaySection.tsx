@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const PlaySection = () => {
   const handlePlayDemo = () => {
-    window.open("https://odisea.netlify.app/", "_blank", "noopener,noreferrer");
+    window.open("https://odisea-game.netlify.app/", "_blank", "noopener,noreferrer");
   };
 
   return (
