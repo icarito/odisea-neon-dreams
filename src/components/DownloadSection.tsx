@@ -35,7 +35,7 @@ const builds: PlatformBuild[] = [
     version: "v0.3.0-alpha",
     size: "~45 MB",
     telemetryNote:
-      "Incluye telemetría anónima. Puedes desactivarla en el aviso de privacidad al iniciar el juego o desde el menú de Opciones.",
+      "Incluye telemetría anónima. Puedes desactivarla desde el menú de Opciones del juego.",
     requirements: [
       { icon: Wifi, text: "Requiere conexión a internet" },
       { icon: Globe, text: "Chrome / Firefox recomendado" },
