@@ -1,4 +1,4 @@
-import { ChevronDown, Gamepad2 } from "lucide-react";
+import { Gamepad2 } from "lucide-react";
 import { Button } from "./ui/button";
 
 const scrollToSection = (id: string) => {
@@ -70,14 +70,6 @@ const HeroSection = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <button onClick={() => scrollToSection("about")} className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-            <span className="text-xs uppercase tracking-widest font-rajdhani">Explorar</span>
-            <ChevronDown className="w-5 h-5" />
-          </button>
         </div>
       </div>
     </section>
