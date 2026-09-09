@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   Monitor, Terminal, Download, ExternalLink,
   Shield, HardDrive, Cpu, AlertTriangle,
@@ -32,8 +32,8 @@ const builds: PlatformBuild[] = [
     subtitle: "ZIP 64-bit (x86_64)",
     icon: Terminal,
     variant: "orange",
-    version: "v0.4.0-nightly.533",
-    size: "~134 MB",
+    version: "v0.4.0-nightly.538",
+    size: "~128 MB",
     telemetryNote:
       "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
@@ -43,7 +43,7 @@ const builds: PlatformBuild[] = [
     ],
     primaryLabel: "Descargar ZIP",
     primaryUrl:
-      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Linux-0.4.0-nightly.533+e91cea5.zip",
+      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Linux-0.4.0-nightly.538+970a431.zip",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
     sha256: "Disponible en la página de releases",
@@ -54,8 +54,8 @@ const builds: PlatformBuild[] = [
     subtitle: "ZIP portable (64-bit)",
     icon: Monitor,
     variant: "orange",
-    version: "v0.4.0-nightly.533",
-    size: "~131 MB",
+    version: "v0.4.0-nightly.538",
+    size: "~125 MB",
     telemetryNote:
       "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
@@ -65,7 +65,7 @@ const builds: PlatformBuild[] = [
     ],
     primaryLabel: "Descargar ZIP",
     primaryUrl:
-      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Windows-0.4.0-nightly.533+e91cea5.zip",
+      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Windows-0.4.0-nightly.538+970a431.zip",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
     sha256: "Disponible en la página de releases",
@@ -76,8 +76,8 @@ const builds: PlatformBuild[] = [
     subtitle: "Build nativa .apk (ARM64)",
     icon: Smartphone,
     variant: "orange",
-    version: "v0.4.0-nightly.533",
-    size: "~141 MB",
+    version: "v0.4.0-nightly.538",
+    size: "~135 MB",
     telemetryNote:
       "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
@@ -86,7 +86,7 @@ const builds: PlatformBuild[] = [
     ],
     primaryLabel: "Descargar .apk",
     primaryUrl:
-      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Android-0.4.0-nightly.533+e91cea5.apk",
+      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Android-0.4.0-nightly.538+970a431.apk",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
   },
@@ -131,6 +131,55 @@ const builds: PlatformBuild[] = [
     secondaryUrl: "https://developer.apple.com/testflight/",
   },
 ];
+
+interface NightlyInfo {
+  version: string;
+  urls: Record<string, string>;
+  sizes: Record<string, string>;
+}
+
+const useLatestNightly = (): NightlyInfo | null => {
+  const [nightly, setNightly] = useState<NightlyInfo | null>(null);
+
+  useEffect(() => {
+    let alive = true;
+    fetch("https://api.github.com/repos/icarito/Odisea/releases/tags/nightly")
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("github api"))))
+      .then((data) => {
+        if (!alive || !Array.isArray(data.assets)) return;
+        const versionMatch = String(data.name ?? "").match(
+          /\d+\.\d+\.\d+-nightly\.\d+\+[0-9a-f]+/
+        );
+        const version = versionMatch?.[0];
+        if (!version) return;
+        const entries: [string, RegExp][] = [
+          ["linux", /^Odisea-Tech-Demo-Linux-\d.*\.zip$/],
+          ["windows", /^Odisea-Tech-Demo-Windows-\d.*\.zip$/],
+          ["android", /^Odisea-Tech-Demo-Android-\d.*\.apk$/],
+        ];
+        const urls: Record<string, string> = {};
+        const sizes: Record<string, string> = {};
+        for (const [id, re] of entries) {
+          const asset = (data.assets as { name: string; size: number; browser_download_url: string }[]).find(
+            (a) => re.test(a.name)
+          );
+          if (asset) {
+            urls[id] = asset.browser_download_url;
+            sizes[id] = `~${Math.round(asset.size / (1024 * 1024))} MB`;
+          }
+        }
+        if (Object.keys(urls).length > 0) {
+          setNightly({ version, urls, sizes });
+        }
+      })
+      .catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  return nightly;
+};
 
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id);
@@ -201,9 +250,20 @@ const BuildCard = ({ build }: { build: PlatformBuild }) => (
 
 const DownloadSection = () => {
   const platform = usePlatformDetect();
+  const nightly = useLatestNightly();
 
-  const featured = useMemo(() => builds.find((b) => b.id === platform) ?? null, [platform]);
-  const rest = useMemo(() => builds.filter((b) => b.id !== platform), [platform]);
+  // URLs/tamaños siempre frescos: la release nightly de GitHub manda; si falla, fallback estático
+  const resolvedBuilds = useMemo(
+    () =>
+      builds.map((b) =>
+        nightly?.urls[b.id]
+          ? { ...b, primaryUrl: nightly.urls[b.id], version: `v${nightly.version}`, size: nightly.sizes[b.id] ?? b.size }
+          : b
+      ),
+    [nightly]
+  );
+  const featured = useMemo(() => resolvedBuilds.find((b) => b.id === platform) ?? null, [resolvedBuilds, platform]);
+  const rest = useMemo(() => resolvedBuilds.filter((b) => b.id !== platform), [resolvedBuilds, platform]);
 
   return (
     <section id="download" className="relative py-24 md:py-32 overflow-hidden">
@@ -350,7 +410,7 @@ const DownloadSection = () => {
         ) : (
           /* Plataforma no detectada: las tres nativas como tarjetas */
           <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
-            {builds
+            {resolvedBuilds
               .filter((b) => ["linux", "windows", "android"].includes(b.id))
               .map((build) => (
                 <BuildCard key={build.id} build={build} />
@@ -363,7 +423,7 @@ const DownloadSection = () => {
                     También disponible para:
                   </span>
                   <div className="flex flex-wrap items-center justify-center gap-3">
-                    {builds
+                    {resolvedBuilds
                       .filter((b) => ["ios", "macos"].includes(b.id))
                       .map((build) => (
                         <a
