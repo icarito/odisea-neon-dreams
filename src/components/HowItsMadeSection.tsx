@@ -17,7 +17,7 @@ const pipelineSteps = [
     icon: Layers,
     title: "3. Modelado 3D",
     description: "Los personajes, escenarios y objetos se modelan con geometría low-poly. El estilo retro-futurista usa pocos polígonos con iluminación neón para un look único.",
-    detail: "Estilo: Low-poly + Neon | Renderer: GLES2"
+    detail: "Estilo: Low-poly + Neon | Renderer: GLES3"
   },
   {
     icon: Music,
@@ -63,7 +63,7 @@ const HowItsMadeSection = () => {
           <div className="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/30 rounded-lg">
             <Monitor className="w-4 h-4 text-accent" />
             <span className="text-xs font-rajdhani text-muted-foreground">
-              Pipeline completo: Godot 3 → GDScript → GLES2 → WebGL → GitHub Pages
+              Pipeline completo: Godot 3 → GDScript → GLES3 → Box3D Physics → WebGL → GitHub Pages
             </span>
           </div>
         </div>

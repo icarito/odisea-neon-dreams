@@ -13,8 +13,13 @@ const techStack = [
   },
   {
     icon: Layers,
-    title: "GLES2 Renderer",
-    description: "Renderizado compatible con hardware legacy para máxima compatibilidad web y móvil.",
+    title: "GLES3 Renderer",
+    description: "Renderizado 3D moderno y eficiente, compatible con web, móvil y escritorio.",
+  },
+  {
+    icon: Cpu,
+    title: "Box3D Physics",
+    description: "Motor de física 3D propio (custom physics), determinista y con soporte para gravedad variable.",
   },
   {
     icon: Monitor,
@@ -103,7 +108,7 @@ const TechSection = () => {
                 <div>
                   <strong className="text-foreground">Características:</strong>
                   <ul className="mt-2 space-y-1">
-                    <li>• Física con gravedad variable</li>
+                    <li>• Física custom Box3D con gravedad variable</li>
                     <li>• Sistema de cámara spring-arm</li>
                     <li>• Soporte gamepad completo</li>
                   </ul>
