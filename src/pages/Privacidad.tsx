@@ -88,7 +88,7 @@ const Privacidad = () => {
         <p className="my-10 border-l-2 border-accent pl-5 font-rajdhani text-lg leading-relaxed text-foreground">
           Odisea recolecta <strong>telemetría anónima</strong> con un único propósito:{" "}
           <strong>mejorar el juego</strong>. No pedimos tu nombre, no creamos cuentas, no mostramos
-          publicidad y <strong>no compartimos estos datos con nadie</strong>. Podés rechazarla en la web y
+          publicidad y <strong>no compartimos estos datos con nadie</strong>. Puedes rechazarla en la web y
           desactivarla en las opciones del juego.
         </p>
 
@@ -247,14 +247,14 @@ const Privacidad = () => {
 
           <Section title="7. Cómo rechazar o desactivar la telemetría">
             <p>
-              <strong className="text-foreground">En la web:</strong> la primera vez que entrás te mostramos
-              un aviso con dos botones. Si elegís{" "}
+              <strong className="text-foreground">En la web:</strong> la primera vez que entras te mostramos
+              un aviso con dos botones. Si eliges{" "}
               <strong className="text-foreground">"Rechazar (sin telemetría)"</strong>, no se envía ningún
-              dato. Tu decisión se guarda en el almacenamiento local de tu navegador; si lo borrás, volveremos
+              dato. Tu decisión se guarda en el almacenamiento local de tu navegador; si lo borras, volveremos
               a preguntarte.
             </p>
             <p>
-              <strong className="text-foreground">En las versiones nativas:</strong> podés desactivar el
+              <strong className="text-foreground">En las versiones nativas:</strong> puedes desactivar el
               envío de telemetría desde las <strong className="text-foreground">opciones del juego</strong>,
               en la sección de privacidad. Con la opción desactivada, el juego deja de enviar heartbeats,
               ghosts y datos de diagnóstico.
@@ -262,7 +262,7 @@ const Privacidad = () => {
             <p>
               Rechazar o desactivar la telemetría{" "}
               <strong className="text-foreground">no limita ninguna función del juego</strong>: la
-              experiencia completa sigue disponible. Tampoco necesitás justificar la decisión ni crear
+              experiencia completa sigue disponible. Tampoco necesitas justificar la decisión ni crear
               ninguna cuenta para tomarla.
             </p>
           </Section>
@@ -270,14 +270,14 @@ const Privacidad = () => {
           <Section title="8. Tus derechos">
             <p>
               Según tu jurisdicción (RGPD en la Unión Europea, CCPA/CPRA en California y normativas
-              equivalentes), tenés derecho a acceder, rectificar, eliminar u oponerte al tratamiento de tus
-              datos. Para ejercerlos, escribinos a <Mail />.
+              equivalentes), tienes derecho a acceder, rectificar, eliminar u oponerte al tratamiento de tus
+              datos. Para ejercerlos, escríbenos a <Mail />.
             </p>
             <p>
               Una aclaración honesta: como la telemetría es anónima y no está vinculada a ninguna identidad,{" "}
               <strong className="text-foreground">no podemos localizar "tus" datos</strong> a partir de tu
               nombre o tu correo — esa imposibilidad es intencional y es la mayor garantía de privacidad que
-              podemos ofrecerte. Si nos indicás un identificador de sesión concreto, eliminaremos esa sesión.
+              podemos ofrecerte. Si nos indicas un identificador de sesión concreto, eliminaremos esa sesión.
             </p>
             <p>
               Nunca vendemos ni compartimos datos personales, por lo que no existe un mecanismo de exclusión

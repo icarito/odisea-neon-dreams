@@ -5,7 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/odisea-neon-dreams/',
+  // base '/': el sitio canónico vive en https://odisea.educa.juegos/ (nginx estático).
+  // El espejo de GitHub Pages compila con --base=/odisea-neon-dreams/ (ver pages.yml).
+  base: '/',
   server: {
     host: "::",
     port: 8080,

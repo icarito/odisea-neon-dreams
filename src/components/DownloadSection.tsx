@@ -27,7 +27,7 @@ const builds: PlatformBuild[] = [
   {
     id: "webgl",
     platform: "WebGL",
-    subtitle: "Jugá en el navegador",
+    subtitle: "Juega en el navegador",
     icon: Globe,
     variant: "cyan",
     version: "v0.3.0-alpha",
@@ -142,11 +142,11 @@ const DownloadSection = () => {
             Descargas
           </span>
           <h2 className="font-sixtyfour text-2xl md:text-4xl font-bold mb-6">
-            <span className="text-foreground">Llevate</span>{" "}
+            <span className="text-foreground">Llévate</span>{" "}
             <span className="neon-text-orange">Odisea</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-rajdhani">
-            Descargá la build más reciente para tu plataforma. Todas las versiones 
+            Descarga la build más reciente para tu plataforma. Todas las versiones 
             incluyen telemetría anónima que ayuda al desarrollo del juego.
           </p>
           

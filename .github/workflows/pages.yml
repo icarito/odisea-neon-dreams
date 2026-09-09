@@ -28,7 +28,9 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build
+        # Canónico: https://odisea.educa.juegos/ (base '/'). El espejo de GitHub
+        # Pages conserva el prefijo del repo vía flag de build.
+        run: npm run build -- --base=/odisea-neon-dreams/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
