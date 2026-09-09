@@ -8,6 +8,12 @@ import Index from "./pages/Index";
 import Privacidad from "./pages/Privacidad";
 import NotFound from "./pages/NotFound";
 
+// Compat: los manifests de actualización viejos embeben "#downloads" (sin
+// slash). HashRouter necesita "#/downloads"; normalizamos antes de montar.
+if (typeof window !== "undefined" && window.location.hash && !window.location.hash.startsWith("#/")) {
+  window.location.replace(window.location.href.replace(/#/, "#/"));
+}
+
 // Destino del enlace de descargas que sirve Odisea Central (#/downloads):
 // renderiza la home y baja hasta la sección de descargas.
 const Downloads = () => {
