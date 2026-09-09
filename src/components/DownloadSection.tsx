@@ -2,7 +2,8 @@ import { useState, useEffect, useMemo } from "react";
 import { 
   Globe, Monitor, Terminal, Download, ExternalLink, 
   Shield, HardDrive, Wifi, Cpu, CheckCircle, AlertTriangle,
-  ChevronRight, Github, Package, Smartphone, Sparkles
+  ChevronRight, Github, Package, Smartphone, Sparkles,
+  Apple, Tablet
 } from "lucide-react";
 import { Button } from "./ui/button";
 import { usePlatformDetect } from "@/hooks/usePlatformDetect";
@@ -43,12 +44,48 @@ const builds: PlatformBuild[] = [
     secondaryUrl: "https://github.com/icarito/Odisea",
   },
   {
+    id: "ios",
+    platform: "iOS",
+    subtitle: "iPhone / iPad",
+    icon: Tablet,
+    variant: "cyan",
+    version: "v0.4.0-nightly",
+    size: "vía TestFlight",
+    requirements: [
+      { icon: Tablet, text: "iPhone y iPad compatibles" },
+      { icon: Apple, text: "Requiere Apple ID" },
+      { icon: Shield, text: "Las builds se actualizan solas vía TestFlight" },
+    ],
+    primaryLabel: "Unirse a la Beta",
+    primaryUrl: "https://testflight.apple.com/join/DegSFeFU",
+    secondaryLabel: "Qué es TestFlight",
+    secondaryUrl: "https://developer.apple.com/testflight/",
+  },
+  {
+    id: "macos",
+    platform: "macOS",
+    subtitle: "Mac — TestFlight",
+    icon: Apple,
+    variant: "cyan",
+    version: "v0.4.0-nightly",
+    size: "vía TestFlight",
+    requirements: [
+      { icon: Monitor, text: "TestFlight para Mac (macOS 12+)" },
+      { icon: Apple, text: "Requiere Apple ID" },
+      { icon: Shield, text: "Las builds se actualizan solas vía TestFlight" },
+    ],
+    primaryLabel: "Unirse a la Beta",
+    primaryUrl: "https://testflight.apple.com/join/DegSFeFU",
+    secondaryLabel: "Qué es TestFlight",
+    secondaryUrl: "https://developer.apple.com/testflight/",
+  },
+  {
     id: "linux",
     platform: "Linux",
     subtitle: "AppImage 64-bit",
     icon: Terminal,
     variant: "orange",
-    version: "v0.3.0-alpha",
+    version: "v0.4.0-nightly",
     size: "~120 MB",
     requirements: [
       { icon: HardDrive, text: "Ubuntu 22.04+ / Debian 12+" },
@@ -67,7 +104,7 @@ const builds: PlatformBuild[] = [
     subtitle: "Portable .exe",
     icon: Monitor,
     variant: "orange",
-    version: "v0.3.0-alpha",
+    version: "v0.4.0-nightly",
     size: "~130 MB",
     requirements: [
       { icon: HardDrive, text: "Windows 10+ (64-bit)" },
@@ -86,7 +123,7 @@ const builds: PlatformBuild[] = [
     subtitle: "Build nativa .apk",
     icon: Smartphone,
     variant: "orange",
-    version: "v0.3.0-alpha",
+    version: "v0.4.0-nightly",
     size: "~80 MB",
     requirements: [
       { icon: HardDrive, text: "Android 10+ / ARM64" },
@@ -103,23 +140,18 @@ const builds: PlatformBuild[] = [
 const DownloadSection = () => {
   const platform = usePlatformDetect();
 
-  const { displayedBuilds, recommendedBuildId, isRestrictedPlatform } = useMemo(() => {
-    let recommendedId: string | null = null;
-    let restricted = false;
+  const { displayedBuilds, recommendedBuildId } = useMemo(() => {
+    const recommended: Record<string, string> = {
+      windows: "windows",
+      linux: "linux",
+      android: "android",
+      ios: "ios",
+      macos: "macos",
+    };
 
-    if (platform === 'windows') recommendedId = 'windows';
-    else if (platform === 'linux') recommendedId = 'linux';
-    else if (platform === 'android') recommendedId = 'android';
-    else if (platform === 'ios' || platform === 'macos') restricted = true;
-
-    const filtered = restricted 
-      ? builds.filter(b => b.id === 'webgl')
-      : builds;
-
-    return { 
-      displayedBuilds: filtered, 
-      recommendedBuildId: recommendedId,
-      isRestrictedPlatform: restricted
+    return {
+      displayedBuilds: builds,
+      recommendedBuildId: recommended[platform] ?? null,
     };
   }, [platform]);
 
@@ -150,16 +182,6 @@ const DownloadSection = () => {
             incluyen telemetría anónima que ayuda al desarrollo del juego.
           </p>
           
-          {isRestrictedPlatform && (
-            <div className="mt-8 flex items-center justify-center gap-2 animate-fade-in">
-              <div className="px-4 py-2 rounded-full bg-accent/10 border border-accent/20 flex items-center gap-2">
-                <AlertTriangle className="w-4 h-4 text-accent" />
-                <span className="text-sm font-rajdhani text-accent font-bold tracking-wider uppercase">
-                  Próximamente build nativa
-                </span>
-              </div>
-            </div>
-          )}
         </div>
 
         {/* Platform cards grid */}
