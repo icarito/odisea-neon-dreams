@@ -40,7 +40,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="animate-slide-up opacity-0 mt-8 text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 font-rajdhani leading-relaxed" style={{ animationDelay: "300ms", animationFillMode: "forwards" }}>
-              Despierta en una nave colonial de 8 kilómetros. La IA que debía proteger a la humanidad 
+              Despierta en una nave industrial de 8 kilómetros. La IA que debía proteger a la humanidad 
               ahora te persigue. Explora, sobrevive y decide el destino de 50,000 almas.
             </p>
 

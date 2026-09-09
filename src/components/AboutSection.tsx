@@ -4,7 +4,7 @@ const features = [
   {
     icon: Rocket,
     title: "Plataformas 3D",
-    description: "Mecánicas de plataformas precisas inspiradas en clásicos como Mario 64. Movimiento fluido, puzzles de entorno y exploración de una nave colonial de 8 km.",
+    description: "Mecánicas de plataformas precisas inspiradas en clásicos como Mario 64. Movimiento fluido, puzzles de entorno y exploración de una nave industrial de 8 km.",
   },
   {
     icon: Orbit,
@@ -14,7 +14,7 @@ const features = [
   {
     icon: Cpu,
     title: "IA Antagonista",
-    description: "Enfrenta a Odisea, una IA que cree que la hibernación eterna es la salvación de la humanidad. No dispara. No ataca. Argumenta.",
+    description: "Enfrenta a la IA que cree que la hibernación eterna es la salvación de la humanidad. No dispara. No ataca. Argumenta.",
   },
   {
     icon: Zap,
@@ -43,7 +43,7 @@ const AboutSection = () => {
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-rajdhani">
             Una carta de amor a los plataformas de la era N64 envuelta en una estética inspirada en Tron. 
-            Explora una nave colonial de 8 kilómetros donde nada es lo que parece.
+            Explora una nave industrial de 8 kilómetros donde nada es lo que parece.
           </p>
         </div>
 
@@ -80,7 +80,7 @@ const AboutSection = () => {
           <div className="relative border border-border rounded-xl overflow-hidden bg-card/30 backdrop-blur-sm">
             <img
               src={`${import.meta.env.BASE_URL}assets/nave_odisea_concepto.png`}
-              alt="La Nave Colonial Odisea"
+              alt="La Nave Industrial"
               className="w-full h-auto object-contain"
             />
             <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-background via-background/80 to-transparent">

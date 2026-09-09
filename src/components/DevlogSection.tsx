@@ -74,7 +74,7 @@ const logEntries = [
       "Storyboard momento a momento de los 5 beats del Nivel 1",
       "Layout definido: pasillo en L con holopantallas pasivas",
       "Mecánica terminal → botón → puerta documentada",
-      "Primera aparición de la IA Odisea integrada al flujo",
+      "Primera aparición de la IA antagonista integrada al flujo",
       "Canvas visual del flujo jugable creado en Obsidian",
       "Design Intent Tree (DIT) con métricas de éxito por sala"
     ],

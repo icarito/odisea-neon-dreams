@@ -5,7 +5,7 @@ const images = [
   {
     src: `${import.meta.env.BASE_URL}assets/odisea_master_portada.png`,
     title: "Concepto Principal",
-    description: "La nave colonial Odisea en toda su gloria industrial",
+    description: "La nave en toda su gloria industrial",
   },
   {
     src: `${import.meta.env.BASE_URL}assets/nave_odisea_exterior.jpeg`,
