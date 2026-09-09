@@ -37,11 +37,11 @@ const GallerySection = () => {
         {/* Section header */}
         <div className="text-center mb-16">
           <span className="inline-block px-4 py-1 mb-4 text-xs uppercase tracking-[0.3em] text-primary border border-primary/30 font-rajdhani">
-            Arte Conceptual
+            Galeria
           </span>
           <h2 className="font-sixtyfour text-2xl md:text-4xl font-bold mb-6">
-            <span className="neon-text-cyan">Desarrollo</span>{" "}
-            <span className="text-foreground">Visual</span>
+            <span className="neon-text-cyan">Arte</span>{" "}
+            <span className="text-foreground">Conceptual</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-rajdhani">
             Estética low-poly con iluminación neón. Geometría inspirada en Tron con ciencia ficción industrial.

@@ -1,15 +1,10 @@
-import { Code, Cpu, Gamepad2, Layers, Monitor, Smartphone } from "lucide-react";
+import { Gamepad2, Layers } from "lucide-react";
 
 const techStack = [
   {
     icon: Gamepad2,
     title: "Godot Engine 3.x",
     description: "Motor de juegos open source con soporte nativo para exportación multiplataforma.",
-  },
-  {
-    icon: Code,
-    title: "GDScript",
-    description: "Lenguaje de scripting optimizado para desarrollo de juegos con sintaxis tipo Python.",
   },
   {
     icon: Layers,
@@ -20,21 +15,6 @@ const techStack = [
     icon: Cpu,
     title: "Box3D Physics",
     description: "Motor de física 3D propio (custom physics), determinista y con soporte para gravedad variable.",
-  },
-  {
-    icon: Monitor,
-    title: "HTML5 Export",
-    description: "Exportación WebGL para jugar directamente en el navegador sin instalación.",
-  },
-  {
-    icon: Smartphone,
-    title: "Android ARM64",
-    description: "Build nativo para dispositivos móviles Android modernos.",
-  },
-  {
-    icon: Cpu,
-    title: "GitHub Actions CI/CD",
-    description: "Pipeline automatizado de build y deploy a GitHub Pages.",
   },
 ];
 
@@ -88,35 +68,6 @@ const TechSection = () => {
           ))}
         </div>
 
-        {/* Additional info card */}
-        <div className="mt-16 max-w-3xl mx-auto">
-          <div className="relative p-6 bg-card/30 backdrop-blur-sm border border-primary/30 rounded-xl">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary/10 via-transparent to-accent/10 rounded-xl blur-sm" />
-            <div className="relative">
-              <h3 className="font-sixtyfour text-sm font-bold text-primary mb-4">
-                Arquitectura del Proyecto
-              </h3>
-              <div className="grid sm:grid-cols-2 gap-4 text-sm font-rajdhani text-muted-foreground">
-                <div>
-                  <strong className="text-foreground">Estructura:</strong>
-                  <ul className="mt-2 space-y-1">
-                    <li>• Escenas modulares con herencia</li>
-                    <li>• Sistema de singletons (Autoload)</li>
-                    <li>• Componentes reutilizables</li>
-                  </ul>
-                </div>
-                <div>
-                  <strong className="text-foreground">Características:</strong>
-                  <ul className="mt-2 space-y-1">
-                    <li>• Física custom Box3D con gravedad variable</li>
-                    <li>• Sistema de cámara spring-arm</li>
-                    <li>• Soporte gamepad completo</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

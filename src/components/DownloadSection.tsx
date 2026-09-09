@@ -132,10 +132,6 @@ const builds: PlatformBuild[] = [
   },
 ];
 
-// Cinta de peligro industrial (hazard stripes) — mismo lenguaje que PlaySection.
-const HAZARD =
-  "bg-[repeating-linear-gradient(45deg,hsl(var(--accent))_0px,hsl(var(--accent))_16px,hsl(var(--background))_16px,hsl(var(--background))_32px)]";
-
 const scrollToSection = (id: string) => {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -217,11 +213,6 @@ const DownloadSection = () => {
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-neon-cyan/5 rounded-full blur-[128px]" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-[128px]" />
 
-      {/* Hazard stripe lateral (industrial) */}
-      <div className={`absolute left-0 top-0 bottom-0 w-2 hidden md:block ${HAZARD} opacity-70`} />
-      {/* Hazard stripe inferior */}
-      <div className={`absolute bottom-0 left-0 right-0 h-2 ${HAZARD}`} />
-
       <div className="relative z-10 container mx-auto px-4">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -253,9 +244,6 @@ const DownloadSection = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-accent via-neon-orange to-accent rounded-xl opacity-40 blur-sm" />
 
               <div className="relative bg-card border-2 border-accent/60 rounded-xl overflow-hidden shadow-[0_0_40px_hsl(var(--accent)/0.25)]">
-                {/* Hazard bars del panel */}
-                <div className={`h-2.5 ${HAZARD}`} />
-
                 {/* Header industrial */}
                 <div className="flex items-center gap-3 px-6 py-4 bg-accent/15 border-b border-accent/30">
                   <Sparkles className="w-5 h-5 text-accent" />
@@ -318,7 +306,6 @@ const DownloadSection = () => {
                   </p>
                 </div>
 
-                <div className={`h-2.5 ${HAZARD}`} />
               </div>
             </div>
 

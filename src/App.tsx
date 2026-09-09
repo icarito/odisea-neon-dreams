@@ -7,6 +7,9 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Privacidad from "./pages/Privacidad";
 import NotFound from "./pages/NotFound";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import GallerySection from "./components/GallerySection";
 
 // Compat: los manifests de actualización viejos embeben "#downloads" (sin
 // slash). HashRouter necesita "#/downloads"; normalizamos antes de montar.
@@ -26,6 +29,17 @@ const Downloads = () => {
   return <Index />;
 };
 
+// Pagina propia, fuera del flujo del home.
+const ArteConceptual = () => (
+  <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <Header />
+    <main className="pt-16">
+      <GallerySection />
+    </main>
+    <Footer />
+  </div>
+);
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -39,6 +53,7 @@ const App = () => (
           {/* URL publica que exigen la App Store y Google Play. */}
           <Route path="/privacidad" element={<Privacidad />} />
           <Route path="/privacy" element={<Privacidad />} />
+          <Route path="/arte-conceptual" element={<ArteConceptual />} />
           <Route path="/downloads" element={<Downloads />} />
           <Route path="/download" element={<Downloads />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

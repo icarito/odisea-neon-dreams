@@ -2,6 +2,9 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
 
+const HAZARD =
+  "bg-[repeating-linear-gradient(45deg,hsl(var(--accent))_0px,hsl(var(--accent))_16px,hsl(var(--background))_16px,hsl(var(--background))_32px)]";
+
 const scrollTo = (id: string) => {
   const el = document.getElementById(id);
   if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -12,14 +15,11 @@ const Header = () => {
 
   const navItems = [
     { label: "Acerca", id: "about" },
-    { label: "Historia", id: "story" },
-    { label: "Galería", id: "gallery" },
-    { label: "¿Cómo se hace?", id: "how-its-made" },
     { label: "Técnico", id: "tech" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -76,6 +76,8 @@ const Header = () => {
           </nav>
         )}
       </div>
+      {/* Sombra del header: hazard stripes industriales */}
+      <div className={"h-1 " + HAZARD} />
     </header>
   );
 };
