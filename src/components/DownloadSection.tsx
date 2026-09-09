@@ -32,7 +32,7 @@ const builds: PlatformBuild[] = [
     subtitle: "ZIP 64-bit (x86_64)",
     icon: Terminal,
     variant: "orange",
-    version: "v0.4.0-nightly.538",
+    version: "v0.4.0-nightly.539",
     size: "~128 MB",
     telemetryNote:
       "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
@@ -43,7 +43,7 @@ const builds: PlatformBuild[] = [
     ],
     primaryLabel: "Descargar ZIP",
     primaryUrl:
-      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Linux-0.4.0-nightly.538+970a431.zip",
+      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Linux-0.4.0-nightly.539+441a99c.zip",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
     sha256: "Disponible en la página de releases",
@@ -54,7 +54,7 @@ const builds: PlatformBuild[] = [
     subtitle: "ZIP portable (64-bit)",
     icon: Monitor,
     variant: "orange",
-    version: "v0.4.0-nightly.538",
+    version: "v0.4.0-nightly.539",
     size: "~125 MB",
     telemetryNote:
       "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
@@ -65,7 +65,7 @@ const builds: PlatformBuild[] = [
     ],
     primaryLabel: "Descargar ZIP",
     primaryUrl:
-      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Windows-0.4.0-nightly.538+970a431.zip",
+      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Windows-0.4.0-nightly.539+441a99c.zip",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
     sha256: "Disponible en la página de releases",
@@ -76,7 +76,7 @@ const builds: PlatformBuild[] = [
     subtitle: "Build nativa .apk (ARM64)",
     icon: Smartphone,
     variant: "orange",
-    version: "v0.4.0-nightly.538",
+    version: "v0.4.0-nightly.539",
     size: "~135 MB",
     telemetryNote:
       "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
@@ -86,7 +86,7 @@ const builds: PlatformBuild[] = [
     ],
     primaryLabel: "Descargar .apk",
     primaryUrl:
-      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Android-0.4.0-nightly.538+970a431.apk",
+      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Android-0.4.0-nightly.539+441a99c.apk",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
   },
@@ -138,41 +138,57 @@ interface NightlyInfo {
   sizes: Record<string, string>;
 }
 
+const parseGithubRelease = (data: unknown): NightlyInfo | null => {
+  const d = data as { name?: string; assets?: { name: string; size: number; browser_download_url: string }[] };
+  const versionMatch = String(d?.name ?? "").match(/\d+\.\d+\.\d+-nightly\.\d+\+[0-9a-f]+/);
+  const version = versionMatch?.[0];
+  if (!version || !Array.isArray(d?.assets)) return null;
+  const entries: [string, RegExp][] = [
+    ["linux", /^Odisea-Tech-Demo-Linux-\d.*\.zip$/],
+    ["windows", /^Odisea-Tech-Demo-Windows-\d.*\.zip$/],
+    ["android", /^Odisea-Tech-Demo-Android-\d.*\.apk$/],
+  ];
+  const urls: Record<string, string> = {};
+  const sizes: Record<string, string> = {};
+  for (const [id, re] of entries) {
+    const asset = d.assets!.find((a) => re.test(a.name));
+    if (asset) {
+      urls[id] = asset.browser_download_url;
+      sizes[id] = `~${Math.round(asset.size / (1024 * 1024))} MB`;
+    }
+  }
+  if (Object.keys(urls).length < 3) return null;
+  return { version, urls, sizes };
+};
+
 const useLatestNightly = (): NightlyInfo | null => {
   const [nightly, setNightly] = useState<NightlyInfo | null>(null);
 
   useEffect(() => {
     let alive = true;
-    fetch("https://api.github.com/repos/icarito/Odisea/releases/tags/nightly")
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("github api"))))
-      .then((data) => {
-        if (!alive || !Array.isArray(data.assets)) return;
-        const versionMatch = String(data.name ?? "").match(
-          /\d+\.\d+\.\d+-nightly\.\d+\+[0-9a-f]+/
-        );
-        const version = versionMatch?.[0];
-        if (!version) return;
-        const entries: [string, RegExp][] = [
-          ["linux", /^Odisea-Tech-Demo-Linux-\d.*\.zip$/],
-          ["windows", /^Odisea-Tech-Demo-Windows-\d.*\.zip$/],
-          ["android", /^Odisea-Tech-Demo-Android-\d.*\.apk$/],
-        ];
-        const urls: Record<string, string> = {};
-        const sizes: Record<string, string> = {};
-        for (const [id, re] of entries) {
-          const asset = (data.assets as { name: string; size: number; browser_download_url: string }[]).find(
-            (a) => re.test(a.name)
-          );
-          if (asset) {
-            urls[id] = asset.browser_download_url;
-            sizes[id] = `~${Math.round(asset.size / (1024 * 1024))} MB`;
+    (async () => {
+      // Primario: JSON refrescado por cron en el propio host (siempre la última nightly)
+      try {
+        const r = await fetch("/nightly.json", { cache: "no-cache" });
+        if (r.ok) {
+          const data = await r.json();
+          if (alive && data?.version && data?.urls) {
+            setNightly({ version: data.version, urls: data.urls, sizes: data.sizes ?? {} });
+            return;
           }
         }
-        if (Object.keys(urls).length > 0) {
-          setNightly({ version, urls, sizes });
-        }
-      })
-      .catch(() => undefined);
+      } catch {
+        /* sigue al respaldo */
+      }
+      // Respaldo: API de GitHub en vivo
+      try {
+        const r = await fetch("https://api.github.com/repos/icarito/Odisea/releases/tags/nightly");
+        const parsed = r.ok ? parseGithubRelease(await r.json()) : null;
+        if (alive && parsed) setNightly(parsed);
+      } catch {
+        /* queda el fallback estático */
+      }
+    })();
     return () => {
       alive = false;
     };
