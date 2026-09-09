@@ -14,7 +14,6 @@ const Header = () => {
     { label: "Acerca", id: "about" },
     { label: "Historia", id: "story" },
     { label: "Galería", id: "gallery" },
-    { label: "Devlog", id: "devlog" },
     { label: "¿Cómo se hace?", id: "how-its-made" },
     { label: "Técnico", id: "tech" },
   ];
