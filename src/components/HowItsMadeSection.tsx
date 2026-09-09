@@ -108,8 +108,8 @@ const HowItsMadeSection = () => {
             </div>
             <p className="text-sm text-muted-foreground font-rajdhani leading-relaxed mb-4">
               Todo el código fuente de Odisea está disponible en GitHub. Puedes explorar cada script,
-              cada escena y cada documento de diseño. Es un recurso educativo para aprender desarrollo
-              de videojuegos con Godot Engine.
+              cada escena y cada documento de diseño. Abierto para quien quiera ver cómo se construye
+              un juego con Godot Engine.
             </p>
             <a
               href="https://github.com/icarito/Odisea"
@@ -126,8 +126,8 @@ const HowItsMadeSection = () => {
         {/* Disclaimer */}
         <div className="mt-8 text-center">
           <p className="text-xs text-muted-foreground/50 font-rajdhani max-w-xl mx-auto">
-            Este sitio es parte del proyecto educativo Odisea. El prototipo mostrado está en fase 
-            pre-pre-alfa y no representa la calidad del producto final.
+            Este sitio es parte del proyecto Odisea. El prototipo mostrado está en fase 
+            alfa y no representa la calidad del producto final.
           </p>
         </div>
       </div>

@@ -47,7 +47,7 @@ const TelemetryBanner = () => {
                       ⚠ Transparencia de Datos
                     </h3>
                     <p className="text-sm text-muted-foreground font-rajdhani leading-relaxed">
-                      Este prototipo <strong className="text-foreground">pre-pre-alfa</strong> recolecta datos anónimos de rendimiento 
+                      Esta <strong className="text-foreground">alfa</strong> recolecta datos anónimos de rendimiento 
                       (FPS, errores de consola, resolución de pantalla) para mejorar el juego.
                     </p>
                     <p className="text-xs text-muted-foreground/70 font-rajdhani mt-2">

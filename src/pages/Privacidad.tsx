@@ -100,7 +100,7 @@ const Privacidad = () => {
             </p>
 
             <h3 className="font-rajdhani font-semibold uppercase tracking-wider text-foreground">
-              En el prototipo web (jugable en el navegador)
+              En la versión web (jugable en el navegador)
             </h3>
             <Tabla
               head={["Dato", "Para qué sirve"]}
