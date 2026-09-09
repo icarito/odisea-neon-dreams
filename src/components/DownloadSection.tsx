@@ -16,6 +16,7 @@ interface PlatformBuild {
   variant: "cyan" | "orange";
   version: string;
   size: string;
+  telemetryNote: string;
   requirements: { icon: React.ComponentType<{ className?: string }>; text: string }[];
   primaryLabel: string;
   primaryUrl: string;
@@ -33,6 +34,8 @@ const builds: PlatformBuild[] = [
     variant: "cyan",
     version: "v0.3.0-alpha",
     size: "~45 MB",
+    telemetryNote:
+      "Incluye telemetría anónima. Puedes desactivarla en el aviso de privacidad al iniciar el juego o desde el menú de Opciones.",
     requirements: [
       { icon: Wifi, text: "Requiere conexión a internet" },
       { icon: Globe, text: "Chrome / Firefox recomendado" },
@@ -51,6 +54,8 @@ const builds: PlatformBuild[] = [
     variant: "cyan",
     version: "v0.4.0-nightly",
     size: "vía TestFlight",
+    telemetryNote:
+      "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
       { icon: Tablet, text: "iPhone y iPad compatibles" },
       { icon: Apple, text: "Requiere Apple ID" },
@@ -69,6 +74,8 @@ const builds: PlatformBuild[] = [
     variant: "cyan",
     version: "v0.4.0-nightly",
     size: "vía TestFlight",
+    telemetryNote:
+      "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
       { icon: Monitor, text: "TestFlight para Mac (macOS 12+)" },
       { icon: Apple, text: "Requiere Apple ID" },
@@ -87,6 +94,8 @@ const builds: PlatformBuild[] = [
     variant: "orange",
     version: "v0.4.0-nightly",
     size: "~128 MB",
+    telemetryNote:
+      "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
       { icon: HardDrive, text: "Ubuntu 22.04+ / Debian 12+" },
       { icon: Cpu, text: "x86_64 o ARM64, OpenGL ES 3.0+" },
@@ -106,6 +115,8 @@ const builds: PlatformBuild[] = [
     variant: "orange",
     version: "v0.4.0-nightly",
     size: "~124 MB",
+    telemetryNote:
+      "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
       { icon: HardDrive, text: "Windows 10+ (64-bit)" },
       { icon: Cpu, text: "DirectX 11 / OpenGL ES 3.0+" },
@@ -125,6 +136,8 @@ const builds: PlatformBuild[] = [
     variant: "orange",
     version: "v0.4.0-nightly",
     size: "~134 MB",
+    telemetryNote:
+      "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
       { icon: HardDrive, text: "Android 10+ / ARM64" },
       { icon: Cpu, text: "GLES 2.0 / OpenGL ES 3.0+" },
@@ -310,6 +323,12 @@ const DownloadSection = () => {
                         {build.primaryLabel}
                       </a>
                     </Button>
+
+                    {/* Aviso de telemetría con opt-out, pegado al CTA principal */}
+                    <p className="flex items-start gap-1.5 px-1 text-[11px] leading-snug text-muted-foreground/80 font-rajdhani">
+                      <Shield className="w-3 h-3 mt-0.5 shrink-0 text-accent/80" />
+                      <span>{build.telemetryNote}</span>
+                    </p>
                     
                     {build.secondaryLabel && build.secondaryUrl && (
                       <Button 
