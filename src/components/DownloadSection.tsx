@@ -39,7 +39,7 @@ const builds: PlatformBuild[] = [
     requirements: [
       { icon: Wifi, text: "Requiere conexión a internet" },
       { icon: Globe, text: "Chrome / Firefox recomendado" },
-      { icon: Cpu, text: "WebGL 2.0 (GPU con OpenGL ES 3.0+)" },
+      { icon: Cpu, text: "WebGL 2.0" },
     ],
     primaryLabel: "Jugar Ahora",
     primaryUrl: "https://odisea-game.netlify.app/",
@@ -92,17 +92,18 @@ const builds: PlatformBuild[] = [
     subtitle: "ZIP 64-bit (x86_64 / ARM64)",
     icon: Terminal,
     variant: "orange",
-    version: "v0.4.0-nightly",
-    size: "~128 MB",
+    version: "v0.4.0-nightly.533",
+    size: "~134 MB",
     telemetryNote:
       "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
       { icon: HardDrive, text: "Ubuntu 22.04+ / Debian 12+" },
-      { icon: Cpu, text: "x86_64 o ARM64, OpenGL ES 3.0+" },
+      { icon: Cpu, text: "x86_64 o ARM64" },
       { icon: Shield, text: "ZIP — extraer y ejecutar" },
     ],
     primaryLabel: "Descargar ZIP",
-    primaryUrl: "https://github.com/icarito/Odisea/releases/tag/nightly",
+    primaryUrl:
+      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Linux-0.4.0-nightly.533+e91cea5.zip",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
     sha256: "Disponible en la página de releases",
@@ -113,17 +114,18 @@ const builds: PlatformBuild[] = [
     subtitle: "ZIP portable (64-bit)",
     icon: Monitor,
     variant: "orange",
-    version: "v0.4.0-nightly",
-    size: "~124 MB",
+    version: "v0.4.0-nightly.533",
+    size: "~131 MB",
     telemetryNote:
       "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
       { icon: HardDrive, text: "Windows 10+ (64-bit)" },
-      { icon: Cpu, text: "DirectX 11 / OpenGL ES 3.0+" },
+      { icon: Cpu, text: "DirectX 11" },
       { icon: Shield, text: "ZIP — extraer y ejecutar" },
     ],
     primaryLabel: "Descargar ZIP",
-    primaryUrl: "https://github.com/icarito/Odisea/releases/tag/nightly",
+    primaryUrl:
+      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Windows-0.4.0-nightly.533+e91cea5.zip",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
     sha256: "Disponible en la página de releases",
@@ -134,17 +136,17 @@ const builds: PlatformBuild[] = [
     subtitle: "Build nativa .apk (ARM64)",
     icon: Smartphone,
     variant: "orange",
-    version: "v0.4.0-nightly",
-    size: "~134 MB",
+    version: "v0.4.0-nightly.533",
+    size: "~141 MB",
     telemetryNote:
       "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
       { icon: HardDrive, text: "Android 10+ / ARM64" },
-      { icon: Cpu, text: "GLES 2.0 / OpenGL ES 3.0+" },
       { icon: Shield, text: "Instalación manual (APK)" },
     ],
     primaryLabel: "Descargar .apk",
-    primaryUrl: "https://github.com/icarito/Odisea/releases/tag/nightly",
+    primaryUrl:
+      "https://github.com/icarito/Odisea/releases/download/nightly/Odisea-Tech-Demo-Android-0.4.0-nightly.533+e91cea5.apk",
     secondaryLabel: "Ver Changelog",
     secondaryUrl: "https://github.com/icarito/Odisea/releases",
   },
@@ -152,6 +154,9 @@ const builds: PlatformBuild[] = [
 
 const DownloadSection = () => {
   const platform = usePlatformDetect();
+
+  // Orden de vitrina: builds de escritorio/móvil nativas primero, web y TestFlight después.
+  const showcaseOrder = ["linux", "windows", "android", "webgl", "ios", "macos"];
 
   const { displayedBuilds, recommendedBuildId } = useMemo(() => {
     const recommended: Record<string, string> = {
@@ -163,7 +168,9 @@ const DownloadSection = () => {
     };
 
     return {
-      displayedBuilds: builds,
+      displayedBuilds: [...builds].sort(
+        (a, b) => showcaseOrder.indexOf(a.id) - showcaseOrder.indexOf(b.id)
+      ),
       recommendedBuildId: recommended[platform] ?? null,
     };
   }, [platform]);
