@@ -29,7 +29,7 @@ const builds: PlatformBuild[] = [
   {
     id: "linux",
     platform: "Linux",
-    subtitle: "ZIP 64-bit (x86_64 / ARM64)",
+    subtitle: "ZIP 64-bit (x86_64)",
     icon: Terminal,
     variant: "orange",
     version: "v0.4.0-nightly.533",
@@ -38,7 +38,7 @@ const builds: PlatformBuild[] = [
       "Incluye telemetría anónima. Puedes desactivarla en el menú de Opciones del juego.",
     requirements: [
       { icon: HardDrive, text: "Ubuntu 22.04+ / Debian 12+" },
-      { icon: Cpu, text: "x86_64 o ARM64" },
+      { icon: Cpu, text: "x86_64" },
       { icon: Shield, text: "ZIP — extraer y ejecutar" },
     ],
     primaryLabel: "Descargar ZIP",
