@@ -1,4 +1,4 @@
-import { Gamepad2, Layers } from "lucide-react";
+import { Cpu, Gamepad2, Layers } from "lucide-react";
 
 const techStack = [
   {
