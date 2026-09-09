@@ -1,7 +1,14 @@
-import { AlertTriangle, ExternalLink, Github, Radiation } from "lucide-react";
+import { useState } from "react";
+import { AlertTriangle, ChevronDown, ExternalLink, Github, Globe, Radiation } from "lucide-react";
 import { Button } from "./ui/button";
 
 const PlaySection = () => {
+  const [showWeb, setShowWeb] = useState(false);
+
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const handlePlayDemo = () => {
     window.open("https://odisea-game.netlify.app/", "_blank", "noopener,noreferrer");
   };
@@ -65,15 +72,7 @@ const PlaySection = () => {
                       </p>
                       <p className="flex items-start gap-2">
                         <span className="text-accent font-bold">►</span>
-                        La versión HTML5 es un <strong className="text-foreground">build de desarrollo crudo</strong> y puede fallar o tener errores.
-                      </p>
-                      <p className="flex items-start gap-2">
-                        <span className="text-accent font-bold">►</span>
                         Contenido incompleto, placeholder assets, y mecánicas experimentales.
-                      </p>
-                      <p className="flex items-start gap-2">
-                        <span className="text-accent font-bold">►</span>
-                        <strong className="text-foreground">Los controles pueden no responder correctamente</strong> - abre en ventana nueva para mejor experiencia.
                       </p>
                     </div>
 
@@ -98,17 +97,51 @@ const PlaySection = () => {
                   </div>
                 </div>
 
-                {/* CTA Button */}
-                <div className="mt-8 flex justify-center">
-                  <Button
-                    variant="hero"
-                    size="xl"
-                    onClick={handlePlayDemo}
-                    className="gap-3 animate-pulse hover:animate-none"
+                {/* Versión Web: acordeón "solo para pruebas" */}
+                <div className="mt-8">
+                  <button
+                    type="button"
+                    onClick={() => setShowWeb((v) => !v)}
+                    aria-expanded={showWeb}
+                    className="w-full flex items-center justify-between gap-3 px-5 py-4 bg-muted/30 border border-border rounded-lg hover:border-primary/40 transition-colors"
                   >
-                    <ExternalLink className="w-5 h-5" />
-                    Abrir Demo en Nueva Ventana
-                  </Button>
+                    <span className="flex items-center gap-3 text-sm uppercase tracking-wider text-muted-foreground font-rajdhani">
+                      <Globe className="w-4 h-4" />
+                      Versión Web (solo para pruebas)
+                    </span>
+                    <ChevronDown
+                      className={`w-5 h-5 text-muted-foreground transition-transform duration-300 ${
+                        showWeb ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {showWeb && (
+                    <div className="mt-3 p-5 bg-muted/20 border border-border rounded-lg space-y-4">
+                      <p className="text-sm text-muted-foreground font-rajdhani leading-relaxed">
+                        Esta versión corre en tu navegador <strong className="text-foreground">solo para pruebas rápidas</strong> del build. La experiencia recomendada es la{" "}
+                        <strong className="text-foreground">versión nativa</strong> (Linux, Windows o Android), disponible en la{" "}
+                        <span
+                          role="link"
+                          tabIndex={0}
+                          className="text-primary underline underline-offset-4 cursor-pointer hover:text-primary/80"
+                          onClick={() => scrollToSection("download")}
+                        >
+                          sección de Descargas
+                        </span>
+                        .
+                      </p>
+                      <p className="text-sm text-muted-foreground font-rajdhani leading-relaxed">
+                        Renderizar 3D en el navegador puede <strong className="text-foreground">relentecer tu navegador</strong>. Si la pruebas, hazlo en ventana nueva.
+                      </p>
+                      <div className="flex justify-center pt-1">
+                        <Button variant="hero" size="lg" onClick={handlePlayDemo} className="gap-3">
+                          <ExternalLink className="w-5 h-5" />
+                          Abrir Demo en Nueva Ventana
+                        </Button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
 
